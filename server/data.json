@@ -1,0 +1,43 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "userName": "Tom",
+            "email": "tom@gmail.com",
+            "password": "1234"
+        },
+        {
+            "id":2,
+            "userName": "Sam",
+            "email": "sam@gmail.com",
+            "password": "1234"
+        },
+        {
+            "id": 3,
+            "userName": "Bob",
+            "email": "bob@gmail.com",
+            "password": "1234"
+        }
+    ],
+
+    "ads": [
+        {
+            "id": 1,
+            "userId": 1,
+            "img": "logo_1.png",
+            "url": "apple.com"
+        },
+        {
+            "id": 2,
+            "userId": 2,
+            "img": "logo_2.png",
+            "url": "samsung.com"
+        },
+        {
+            "id": 3,
+            "userId": 1,
+            "img": "logo_3.png",
+            "url": "google.com"
+        }
+    ]
+}
