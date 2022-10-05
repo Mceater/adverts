@@ -4,11 +4,17 @@ body {
   background-color: blanchedalmond;
 }
 
+.container {
+  display: flex;
+  width: 100%;
+  justify-content:  center;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(6, 50px); /*grid will increase in every 3rd logo starting from 1*/
   grid-auto-rows: 100px;
-  grid-gap: 10px;
+  grid-gap: 5px;
   justify-content: center;
   align-content: center;
   height: 100vh;
