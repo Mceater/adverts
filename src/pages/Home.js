@@ -4,6 +4,9 @@ function Home () {
     return(
 
         <div className="container">
+            <div className="login">
+                <a href="login-page">Login</a>
+            </div>
             <TransformWrapper>
                 <TransformComponent>
                 <div className="grid-container">
@@ -34,6 +37,13 @@ function Home () {
                 </TransformComponent>
             </TransformWrapper>
             
+            <div className="footer">
+                <ul className="footer-containts">
+                    <li><a href="About-Us">About Us</a></li>
+                    <li><a href="Services">Services</a></li>
+                    <li><a href="Price">Price</a></li>
+                </ul>
+            </div>
         </div>
         
 
