@@ -16,7 +16,11 @@ export default function Login (){
                     <label>Password</label>
                 </div>
                 <input className="submit-btn" type="submit" value="Login"/>
-                <a href='#'>Forgot Password?</a>
+                <div className="link">
+                    <a href='#'>Sign Up</a>
+                    <a href='#'>Forgot Password?</a>
+                </div>
+                
             </form>
 
             <div className="forgot-pw">

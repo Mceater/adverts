@@ -163,10 +163,18 @@ a {
   cursor: pointer;
 }
 
-.form a {
+.link {
   color: inherit;
   float: left;
-  margin-top: -30px;
+  margin-top: -40px;
+  text-align: left;
+}
+
+.link a {
+  display: block;
+  margin: auto;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 .forgot-pw {
