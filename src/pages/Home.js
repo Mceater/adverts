@@ -5,7 +5,7 @@ function Home () {
 
         <div className="container">
             <div className="login">
-                <a href="login-page">Login</a>
+                <input onClick={""} className="btn" type="button" value="Login"/>
             </div>
             <TransformWrapper>
                 <TransformComponent>
