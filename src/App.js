@@ -7,7 +7,7 @@ import UserPage from "./pages/UserPage";
 
 function App() {
   return (
-    <Login/>
+    <Home/>
   );
 }
 
