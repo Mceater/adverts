@@ -1,22 +1,6 @@
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
-import { useEffect, useState } from 'react';
-import service from '../service/Service';
 
 function Home () {
-
-    const [ads, setAds] = useState([])
-
-    const getAds = () => {
-        service.getAll()
-        .then(obj => {
-            setAds(obj)
-        })
-    }
-
-    useEffect(() => {
-        getAds()
-    })
-
     return(
 
         <div className="container">
@@ -26,13 +10,74 @@ function Home () {
             <TransformWrapper>
                 <TransformComponent>
                 <div className="grid-container">
-                    {
-                        ads.map( ad => 
-                            <div key={ad.id} className="logo-container glass">
-                                <img className="ad-logo" src={"/images/"+ad.img} alt="logo1"/>
-                            </div>
-                        )
-                    }
+
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_2.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_3.png" alt="logo1"/>
+                    </div>
+                    <div className="logo-container glass">
+                        <img className="ad-logo" src="/images/logo_1.png" alt="logo1"/>
+                    </div>
+
                 </div>
                 </TransformComponent>
             </TransformWrapper>
