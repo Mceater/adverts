@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import service from "../service/Service";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 function Home() {
   const [ads, setAds] = useState([]);
@@ -18,6 +19,11 @@ function Home() {
     navigate("/login");
   };
 
+
+  const navigateToRegister = () => {
+    navigate("/register");
+  };
+
   //   const navigateHome = () => {
   //     // 👇️ navigate to /
   //     navigate("/");
@@ -29,15 +35,22 @@ function Home() {
 
   return (
     <div className="container">
-      <div className="login">
+      <div>
         <input
           onClick={navigateToLogin}
           className="btn"
           type="button"
           value="Login"
         />
+                <input
+          onClick={navigateToRegister}
+          className="btn"
+          type="button"
+          value="Register"
+        />
         <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           {/* <Route path="/" element={<Home />} /> */}
         </Routes>
       </div>

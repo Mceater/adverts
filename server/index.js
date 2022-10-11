@@ -1,6 +1,8 @@
 const express = require('express')
 const cors = require('cors')
 const fs = require("fs")
+// const authRouter = require("./routes/auth.js");
+// const userRouter = require("./routes/user.js");
 
 const rawData = fs.readFileSync("server/data.json")
 const data = JSON.parse(rawData)
@@ -9,6 +11,9 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.static('build'))
+
+// app.use("/api/auth", authRouter);
+// app.use("/api/users", userRouter);
 
 // GET 
 app.get('/api/users', (req, res) => {
