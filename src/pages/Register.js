@@ -78,7 +78,7 @@ function Register() {
         <button type="submit">Create User</button>
         <br></br>
         <span>
-          Already have an account ? <Link to="/login">Login.</Link>
+          Already have an account? <Link to="/login">Login.</Link>
         </span>
       </form>
     </>
