@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 
-const url = "http://localhost:3001"
+const url = "http://localhost:3001";
 const registerRoute = `${url}/api/auth/register`;
 
 function Register() {
@@ -15,7 +15,7 @@ function Register() {
 
   useEffect(() => {
     if (localStorage.getItem("user")) {
-      navigate("/");
+      navigate();
     }
   }, [navigate]);
 

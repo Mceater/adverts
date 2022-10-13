@@ -4,6 +4,7 @@ import service from "../service/Service";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import UserPage from "../pages/UserPage";
 
 function Home() {
   const [ads, setAds] = useState([]);
@@ -18,7 +19,6 @@ function Home() {
   const navigateToLogin = () => {
     navigate("/login");
   };
-
 
   const navigateToRegister = () => {
     navigate("/register");
@@ -42,17 +42,12 @@ function Home() {
           type="button"
           value="Login"
         />
-                <input
+        <input
           onClick={navigateToRegister}
           className="btn"
           type="button"
           value="Register"
         />
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          {/* <Route path="/" element={<Home />} /> */}
-        </Routes>
       </div>
 
       <TransformWrapper>
