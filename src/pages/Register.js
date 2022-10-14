@@ -57,30 +57,34 @@ function Register() {
 
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e)}>
-        <div className="brand">
+      <div className="container">
+        <img className="main-logo" src={"/images/find-It.png"} />
+        <form className="form" onSubmit={(e) => handleSubmit(e)}>
           <h1>Register</h1>
-        </div>
-        <input
-          type="text"
-          placeholder="Username"
-          name="username"
-          onChange={(e) => handleChange(e)}
-        />
-        <br></br>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => handleChange(e)}
-        />
-        <br></br>
-        <button type="submit">Create User</button>
-        <br></br>
-        <span>
-          Already have an account? <Link to="/login">Login.</Link>
-        </span>
-      </form>
+          <div className="input-group">
+            <input
+              type="text"
+              placeholder="Username"
+              name="username"
+              onChange={(e) => handleChange(e)}
+            />
+          <br></br>
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={(e) => handleChange(e)}
+          />
+   
+          <br></br>
+          <button className="submit-btn" type="submit">Create User</button>
+          <br></br>
+          </div>
+          <span>
+            Already have an account? <Link to="/login">Login.</Link>
+          </span>
+        </form>
+      </div>
     </>
   );
 }

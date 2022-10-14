@@ -35,6 +35,10 @@ function Home() {
 
   return (
     <div className="container">
+      <img
+        className="main-logo"
+        src={"/images/find-It.png" }
+      />
       <div>
         <input
           onClick={navigateToLogin}

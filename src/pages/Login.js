@@ -64,6 +64,7 @@ export default function Login() {
 
   return (
     <div className="container">
+      <img className="main-logo" src={"/images/find-It.png"} />
       <form className="form" onSubmit={formHandler}>
         <img src="/images/avatar.png" alt="avatar" />
         <h2>Login</h2>
