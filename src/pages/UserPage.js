@@ -1,87 +1,56 @@
-import { useNavigate } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import { useState } from "react";
+import AdList from '../components/AdList'
 
-export default function UserPage() {
-  const navigate = useNavigate();
-  const navigateToMain = () => {
-    navigate("/");
-  };
+function Userpage ({data}) {
+    const { isAuthenticated, logout, user, loginWithRedirect } = useAuth0();
 
-  return (
-    <div className="container">
-      <div className="header">
-        <div className="user-pf">
-          <img src="/images/avatar.png" alt="avatar" />
-          <h2>Tom Hard</h2>
-        </div>
-        <input
-          className="btn"
-          type="button"
-          value="Logout"
-          onClick={navigateToMain}
-        />
-      </div>
-      <div className="services">
-        <div className="shortener effect2">
-          <form>
-            <h3>Input URL to be Shortened</h3>
-            <input type="text" placeholder="Enter your URL" />
-            <button type="submit">Shorten Now</button>
-          </form>
-        </div>
-        <div className="ads effect2">
-          <table>
-            <tr>
-              <th>Image</th>
-              <th>URL</th>
-              <th>Start Date</th>
-              <th>Expiration</th>
-              <th></th>
-              <th></th>
-            </tr>
-            <tr>
-              <td>
-                <img src="/images/logo_2.png" />
-              </td>
-              <td>https://www.samsung.com/</td>
-              <td>1/10/2022</td>
-              <td>10/10/2022</td>
-              <td>
-                <input type="button" value="edit" />
-              </td>
-              <td>
-                <input type="button" value="extend" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="/images/logo_1.png" />
-              </td>
-              <td>https://www.apple.com/</td>
-              <td>1/10/2022</td>
-              <td>10/10/2022</td>
-              <td>
-                <input type="button" value="edit" />
-              </td>
-              <td>
-                <input type="button" value="extend" />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-      <div className="footer">
-        <ul className="footer-containts">
-          <li>
-            <a href="About-Us">About Us</a>
-          </li>
-          <li>
-            <a href="Services">Services</a>
-          </li>
-          <li>
-            <a href="Price">Price</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  );
+    return(
+     <div className="body">
+        {!isAuthenticated && (
+            <div>
+                
+                <h1>Please Login</h1>
+                <div className='btn-wrapper'> 
+                    <button onClick={() => loginWithRedirect()} className='login-btn'>Login</button>
+                </div>
+            </div>
+        )}
+        {isAuthenticated && (
+            <div>
+                <div className="header">
+                    <div className="userPhoto">
+                        <img src={user.picture} alt="User"/>
+                    </div>
+                    <h1>{user.name}</h1>
+                    <div className='btn-wrapper'> 
+                        <button onClick={() => logout()} className='login-btn'>Logout</button>
+                    </div>
+                </div>
+                <div className='applications'>
+                    <form className='form'>
+                        <h2>URL Shortener</h2>
+                        <input className='url-input' type='text' placeholder='Enter your URL'/>
+                        <input className='btn' type='submit' value="Shorten URL"/>
+                    </form>
+                    <div className='form'>
+                        <h2>Your List of Ads</h2>
+                        <div className='list-of-ads'>
+                            <div className='list-header'>
+                                <h3>Logo</h3>
+                                <h3>URL links</h3>
+                                <h3>Started</h3>
+                                <h3>Expire</h3>
+                            </div>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        )}
+     </div>   
+    )
 }
+
+export default Userpage

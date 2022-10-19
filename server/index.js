@@ -1,76 +1,67 @@
-const express = require("express");
-const mongoose = require("mongoose");
+require('dotenv').config()
+const express = require('express')
 const cors = require('cors')
-const fs = require("fs")
-const authRouter = require("./routes/auth.js");
-// const userRouter = require("./routes/user.js");
-
-const rawData = fs.readFileSync("server/data.json")
-const data = JSON.parse(rawData)
+const Ad = require('./data-connection')
 
 const app = express()
 app.use(cors())
 app.use(express.json())
-app.use(express.static('build'))
+app.use = (express.static('build'))
 
-require("dotenv").config();
-
-app.use("/api/auth", authRouter);
-// app.use("/api/users", userRouter);
-
-// GET 
-
-app.get('/api/users', (req, res) => {
-    res.json(data.users)
+app.get('/api/ads', (req, res) => {
+    Ad.find({}).then(result => {
+        res.json(result)
+    })
 })
 
-app.get('/api/users/:id', (req, res) => { //getting user by id
+// getting data with id (id needs to be inside "" mark or specify number in id)
+app.get('/api/ads/:id', (req, res) => {
     const id = req.params.id
-    data.users.map((user) => {
-        if(user.id === id){
-            res.json(user)
-        } else {
-            res.status(404)
-            res.send("<h1>User not found</h1>")
+
+    Ad.findById(id).then(result => {
+        res.json(result)
+    })
+})
+
+
+app.post('/api/ads/:id', (req, res) => { // instead of post request put request can be used
+    const id = req.params.id
+    const newAd = req.body
+
+    data.ads.map((ad) => {
+        if(ad.id === id) {
+            ad.userId = newAd.userId // though user id is not going change
+            ad.img = newAd.img
+            ad.url = newAd.url
+            res.json(ad)
         }
     })
 })
 
-app.get('/api/ads', (req, res) => {
+app.post('/api/ads', (req, res) => {
+    const newAd = req.body
+    data.ads.push(newAd)
     res.json(data.ads)
 })
 
-app.get('/api/ads/:id', (req, res) => {
+app.delete('/api/ads/:id', (req, res) => {
     const id = req.params.id
+
+    newAds = []
+    result = {"Status": "not found"}
     data.ads.map((ad) => {
-        if(ad.id === id){
-            res.json(ad)
+        if(ad.id === id) {
+            result = {"status": "success"} 
         } else {
-            res.status(404)
-            res.send("<h1>User not found</h1>")
+            newAds.push(ad)
         }
     })
+
+    data.ads = newAds
+    res.json(result)
 })
 
-// POST
-
-// PUT
-
-mongoose
-  .connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("DB Connetion Successfull");
-  })
-  .catch((err) => {
-    console.log("Error" + err.message);
-  });
-
-const PORT = process.env.PORT || 3001;
-// const PORT = 3001;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const PORT = 3001
+app.listen (PORT, () => {
+    console.log(`Server is running on ${PORT}`)
+})

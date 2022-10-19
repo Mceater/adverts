@@ -1,6 +1,3 @@
-Shareing account for mongoDB
-google: groupkproj@gmail.com / projectkk
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
