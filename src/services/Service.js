@@ -6,4 +6,4 @@ const getAll = () => {
     .then(res => res.data)
 }
 
-export default {getAll} // exporting multiple objects
+export default getAll // exporting multiple objects
