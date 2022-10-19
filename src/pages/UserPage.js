@@ -2,8 +2,13 @@ import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import AdList from '../components/AdList'
 
-function Userpage ({data}) {
-    const { isAuthenticated, logout, user, loginWithRedirect } = useAuth0();
+function Userpage ({data, user, isAuthenticated}) {
+    const { logout, loginWithRedirect } = useAuth0();
+    let userData = []
+    
+    if(user !== undefined){
+        userData = data.filter(obj => obj.userId === user.sub)
+    }
 
     return(
      <div className="body">
@@ -42,7 +47,7 @@ function Userpage ({data}) {
                                 <h3>Started</h3>
                                 <h3>Expire</h3>
                             </div>
-
+                            {userData.map(obj => <AdList key={obj.id} data={obj}/>)}
                         </div>
                         
                     </div>

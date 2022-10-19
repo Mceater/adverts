@@ -1,5 +1,6 @@
 ###
-get http://localhost:3001/api/ads/634cb6f4fbfb527956bebc91
+get http://localhost:3001/api/ads/
+
 
 ###
 post http://localhost:3001/api/ads/634cb6f5fbfb527956bebc99 http/1.1

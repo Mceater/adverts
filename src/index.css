@@ -46,7 +46,7 @@ button {
 .login-btn {
   clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%); /*top inner shadow looks ugly clip-path: polygon(0 50%, 10% 0, 90% 0, 100% 50%, 90% 10%, 10% 10%, 0 50%);*/
   border: none;
-  font-size: large;
+  font-size: 12px;
   text-transform: uppercase;
   font-weight: bold;
   background: rgb(19, 31, 63);

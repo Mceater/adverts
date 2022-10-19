@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 import Ad from '../components/Ad'
 
-function Home ({data}) {
-    const { isAuthenticated, loginWithRedirect, user } = useAuth0();
+function Home ({data, user, isAuthenticated}) {
+    const { loginWithRedirect } = useAuth0();
    
     let n = -1;
 

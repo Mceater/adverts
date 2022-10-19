@@ -6,15 +6,4 @@ const getAll = () => {
     .then(res => res.data)
 }
 
-const getUnit = (id) => {
-    return axios.get(baseUrl + "/" + id)
-    .then(res => res.data)
-}
-
-const deleteObj = (object) => {
-    return axios.delete(baseUrl + '/' + object)
-}
-
-
-
-export default {getAll, deleteObj, getUnit} // exporting multiple objects
+export default {getAll} // exporting multiple objects
