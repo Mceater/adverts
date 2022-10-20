@@ -16,7 +16,6 @@ const ShortenUrl = ({ inputValue }) => {
       );
       setShortenLink(res.data.result.full_short_link);
     } catch (err) {
-      //   console.log(err.message);
       setError(err);
     } finally {
       setLoading(false);
@@ -37,6 +36,7 @@ const ShortenUrl = ({ inputValue }) => {
     return () => clearTimeout(timer);
   }, [copied]);
   console.log(shortenLink);
+
   if (loading) {
     return <p className="noData">Loading...</p>;
   }

@@ -297,16 +297,24 @@ h3 {
   padding-top: 50px;
 }
 .result p {
-  color: rgb(0, 0, 0);
-  border: 1px solid var(--primary-color);
-  padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  border: none;
+  margin: auto;
+  padding: 25px;
+  width: 70%;
+  font-size: 1.25rem;
+  background: none;
+  background-color: white;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
 }
 .result button {
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   color: rgb(0, 0, 0);
   cursor: pointer;
-  background: var(--primary-color);
+  background: rgba(185, 183, 183, 0.5);
   border: none;
 }
 .result button.copied {

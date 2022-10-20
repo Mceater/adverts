@@ -40,7 +40,7 @@ function Userpage({ data, user, isAuthenticated }) {
           </div>
           <div className="applications">
             <OriginalUrl setInputValue={setInputValue} />
-            <ShortenUrl inputValue={inputValue} />
+            {/* <ShortenUrl /> */}
             <div className="form">
               <h2>Your List of Ads</h2>
               <div className="list-of-ads">
