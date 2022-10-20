@@ -130,6 +130,16 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
 .applications {
   position: relative;
   margin: auto;
@@ -142,6 +152,18 @@ h1 {
 textarea:focus,
 input:focus {
   outline: none;
+}
+
+.form {
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px 0 35px 0;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.5);
+  margin-bottom: 30px;
 }
 
 .form {
@@ -267,30 +289,32 @@ h3 {
 
 /* Result */
 .result {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  clear: both;
+  text-align: center;
+  padding-top: 50px;
 }
 .result p {
-  color: #fff;
+  color: rgb(0, 0, 0);
   border: 1px solid var(--primary-color);
   padding: 0.5rem 1rem;
   margin-right: 1rem;
 }
 .result button {
   padding: 0.5rem 1rem;
-  color: #fff;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   background: var(--primary-color);
   border: none;
 }
 .result button.copied {
-  background: #fff;
+  background: rgb(0, 0, 0);
   color: var(--primary-color);
 }
 .noData {
-  color: #fff;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
 }
 
