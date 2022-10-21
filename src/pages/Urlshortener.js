@@ -32,19 +32,19 @@ const Urlshortener = ({ inputValue }) => {
   };
 
 
-  useEffect(() => {
-    if (value.length) {
-      fetchData();
-    }
-  }, [value]);
+  // useEffect(() => {
+  //   if (value.length) {
+  //     fetchData();
+  //   }
+  // }, [value]);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setCopied(false);
-    }, 1000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setCopied(false);
+  //   }, 1000);
 
-    return () => clearTimeout(timer);
-  }, [copied]);
+  //   return () => clearTimeout(timer);
+  // }, [copied]);
 
 
   // if (loading) {
