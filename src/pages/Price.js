@@ -20,7 +20,7 @@ function Price () {
       
       <div class="pricing-plan">
         <img src="images/doubledollar.png" alt="" class="pricing-img"/>
-        <h2 class="pricing-header">Expensive-LongTerm</h2>
+        <h2 class="pricing-header">Costly-LongTerm</h2>
         <ul class="pricing-features">
           <li class="pricing-features-item">Costly</li>
           <li class="pricing-features-item">6 months</li>
