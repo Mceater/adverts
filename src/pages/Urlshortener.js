@@ -2,13 +2,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
 
-const OriginalUrl = ({ inputValue }) => {
+const Urlshortener = ({ inputValue }) => {
   const [value, setValue] = useState("");
 
-  const handleClick = () => {
-    inputValue(value);
-    setValue("");
-  };
 
   const [shortenLink, setShortenLink] = useState("");
   const [copied, setCopied] = useState(false);
@@ -29,11 +25,18 @@ const OriginalUrl = ({ inputValue }) => {
     }
   };
 
-  // useEffect(() => {
-  //   if (inputValue.length) {
-  //     fetchData();
-  //   }
-  // }, [inputValue]);
+  const handleClick = () => {
+    inputValue(value);
+    setValue("");
+    fetchData();
+  };
+
+
+  useEffect(() => {
+    if (value.length) {
+      fetchData();
+    }
+  }, [value]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,14 +45,14 @@ const OriginalUrl = ({ inputValue }) => {
 
     return () => clearTimeout(timer);
   }, [copied]);
-  console.log(shortenLink);
 
-  if (loading) {
-    return <p className="noData">Loading...</p>;
-  }
-  if (error) {
-    return <p className="noData">Something wne t wrong :(</p>;
-  }
+
+  // if (loading) {
+  //   return <p className="noData">Loading...</p>;
+  // }
+  // if (error) {
+  //   return <p className="noData">Something wne t wrong :(</p>;
+  // }
 
   return (
     <form className="form">
@@ -83,4 +86,4 @@ const OriginalUrl = ({ inputValue }) => {
   );
 };
 
-export default OriginalUrl;
+export default Urlshortener;

@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
-import OriginalUrl from "./OriginalUrl";
-import ShortenUrl from "./ShotenUrl";
+import Urlshortener from "./Urlshortener";
 import AdList from "../components/AdList";
 
 function Userpage({ data, user, isAuthenticated }) {
@@ -39,7 +38,7 @@ function Userpage({ data, user, isAuthenticated }) {
             </div>
           </div>
           <div className="applications">
-            <OriginalUrl setInputValue={setInputValue} />
+            <Urlshortener setInputValue={setInputValue} />
             {/* <ShortenUrl /> */}
             <div className="form">
               <h2>Your List of Ads</h2>
