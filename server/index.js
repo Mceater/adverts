@@ -3,7 +3,21 @@ const express = require('express')
 const cors = require('cors')
 const Ad = require('./data-connection')
 
+const jwks = require("jwks-rsa")
+const jwt = require('express-jwt')
+const authConfig = process.env
 
+const jwtCheck = jwt({
+    secret: jwks.expressJwtSecret({
+        cache: true,
+        rateLimit: true,
+        jwksRequestsPerMinute: 5,
+        jwksUri: `https://${authConfig.REACT_APP_AUTH0_DOMAIN}/.well-known/jwks.json`
+    }),
+    audience: `https://${authConfig.REACT_APP_AUDIENCE}`,
+    issuer: `https://${authConfig.REACT_APP_AUTH0_DOMAIN}`,
+    algorithms: ['RS256']
+})
 
 const app = express()
 app.use(cors())
@@ -24,7 +38,10 @@ app.get('/api/ads/:id', (req, res) => {
     })
 })
 
+
+
 const PORT = 3001
 app.listen (PORT, () => {
     console.log(`Server is running on ${PORT}`)
 })
+

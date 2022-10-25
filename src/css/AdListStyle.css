@@ -1,0 +1,54 @@
+
+.list-header {
+    display: grid;
+    grid-template-columns: 60px auto 90px 90px 70px;
+    margin: 15px 15px 0 15px;
+    border-bottom: 2px solid rgb(0, 0, 0, 1);
+  }
+  
+h3 {
+    margin-top: 0;
+}
+
+.ad-list {
+    display: grid;
+    grid-template-columns: 60px auto 60px 70px;
+    gap: 10px;
+    margin: 0 15px 0 15px;
+    border-bottom: 2px solid rgba(119, 119, 119, 0.5);
+    align-items: center;
+}
+
+.ad-list button {
+    border: none;
+    background: none;
+}
+
+.ad-list button:hover {
+    background-color: rgb(199, 189, 189);
+}
+
+.ad-list img {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.adForm {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto 90px 90px;
+    margin: 0;
+    height: 100%;
+    margin-left: 90px;
+}
+
+.adInput {
+    position: relative;
+    border: none;
+    font-size: inherit;
+}
+
+.ad-data {
+    display: grid;
+    grid-template-columns: auto 90px;
+}

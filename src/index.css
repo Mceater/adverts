@@ -25,6 +25,7 @@ a {
 
 button {
   cursor: pointer;
+  height: 100%;
 }
 .container {
   display: block;
@@ -157,39 +158,6 @@ textarea:focus, input:focus{
   background: white;
   border-radius: 20px;
   padding-bottom: 20px;
-}
-
-.list-header {
-  display: grid;
-  grid-template-columns: 60px auto 90px 90px 90px 70px;
-  margin: 15px 15px 0 15px;
-  border-bottom: 2px solid rgb(0, 0, 0, 1);
-}
-
-h3 {
-  margin-top: 0;
-}
-
-.ad-list {
-  display: grid;
-  grid-template-columns: 60px auto 90px 90px 60px 70px;
-  gap: 10px;
-  margin: 0 15px 0 15px;
-  border-bottom: 2px solid rgba(119, 119, 119, 0.5);
-}
-
-.ad-list button {
-  border: none;
-  background: none;
-}
-
-.ad-list button:hover {
-  background-color: rgb(199, 189, 189);
-}
-
-.ad-list img {
-  padding-top: 10px;
-  padding-left: 10px;
 }
 
 .url-input {
