@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Service from '../services/Service'
 
 import '../css/AdListStyle.css';
 
@@ -9,6 +10,7 @@ const AdList = ({data, function_edit, function_extend}) => {
 
     const edit = () => {
         setMode('edit')
+        
     }
     
     function extend(){
@@ -24,8 +26,8 @@ const AdList = ({data, function_edit, function_extend}) => {
         setMode('')
     }
 
-    function deleteItem(){
-        setMode('delete')
+    function deleteAd () {
+        Service.deleteData(data.id)
     }
 
     function updateField(e){
@@ -52,7 +54,7 @@ const AdList = ({data, function_edit, function_extend}) => {
             </form>
             
             <button onClick={cancel}>Cancel</button>
-            <button onClick={deleteItem}>Delete</button>
+            <button onClick={deleteAd}>Delete</button>
         </div>
         )
     } 
@@ -61,7 +63,7 @@ const AdList = ({data, function_edit, function_extend}) => {
             <div>extend</div>
         )
     }
-
+    
     return (
         <div className="ad-list">
             <div className="list-img">

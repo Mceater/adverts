@@ -51,4 +51,5 @@ h3 {
 .ad-data {
     display: grid;
     grid-template-columns: auto 90px;
+    align-items: center;
 }

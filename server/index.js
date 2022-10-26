@@ -38,7 +38,30 @@ app.get('/api/ads/:id', (req, res) => {
     })
 })
 
+app.post('/api/ads', jwtCheck, async (req, res, next) => {
+    const body = req.body
 
+    const newAd = new Ad ({
+        userId: body.userId,
+        img: body.img,
+        url: body.url,
+        endDate: body.endDate,
+        categories: body.categories
+    })
+    newAd.save().then(result => {
+        res.json(result.toJSON)
+        console.log("like record saved")
+    })
+    .catch(err => next(error))
+})
+
+app.delete('/api/ads/:id', (req, res, next) => {
+    Ad.findByIdAndRemove(req.params.id)
+    .then(result => {
+        res.status(204).end()
+    })
+    .catch(error => next(error)) 
+})
 
 const PORT = 3001
 app.listen (PORT, () => {

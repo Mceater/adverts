@@ -126,11 +126,13 @@ h1{
 
 .applications {
   position: relative;
+  display: block;
   margin:auto;
   width: 100%;
   clear: both;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 textarea:focus, input:focus{

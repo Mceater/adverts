@@ -36,6 +36,7 @@ function Home ({data, user, isAuthenticated}) {
                             <button className='login-btn'>{user.name}</button>
                         </div>
                     </Link>
+                    
                 )
             )}
 
