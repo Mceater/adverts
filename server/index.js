@@ -30,19 +30,25 @@ app.use(cors())
 app.use(express.json())
 app.use = (express.static('build'))
 
-app.post ('/api/ads', upload.single("adPhoto"), (req, res) => {
-    let fileName = "./public/uploads/" + req.file.originalname
-    fs.rename(`./public/uploads/${req.file.filename}`, fileName, function(){})
+app.post ('/api/ads', upload.single("adPhoto"), (req, res, next) => {
+    let fileName = req.file.originalname
+    fs.rename(`./public/uploads/${req.file.filename}`, "./public/uploads/" + fileName, function(){})
 
-    const newAd = {
-        img: req.file.originalname,
-        url: req.body.url,
-        categories: req.body.categories,
-        id: req.body.id
-    }
+    const body = req.body
 
-    data.ads.push(newAd)
+    const newAd = new Ad ({
+        userId: body.userId,
+        img: fileName,
+        url: body.url,
+        endDate: body.endDate,
+        categories: body.categories
+    })
+    newAd.save().then(result => {
+        res.json(result.toJSON)
+        console.log("like record saved")
+    })
     res.json(newAd)
+    .catch(err => next(err))
 })
 
 app.get('/api/ads', (req, res) => {
