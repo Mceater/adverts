@@ -10,7 +10,6 @@ function Userpage({ data, user, isAuthenticated }) {
   if (user !== undefined) {
     userData = data.filter((obj) => obj.userId === user.sub);
   }
-  const [inputValue, setInputValue] = useState("");
 
   return (
     <div className="body">
@@ -38,7 +37,7 @@ function Userpage({ data, user, isAuthenticated }) {
             </div>
           </div>
           <div className="applications">
-            <Urlshortener setInputValue={setInputValue} />
+            <Urlshortener />
             {/* <ShortenUrl /> */}
             <div className="form">
               <h2>Your List of Ads</h2>

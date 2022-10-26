@@ -1,23 +1,21 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
+import ShortenerAPI from "../services/ShortenerAPI";
 
-const Urlshortener = ({ inputValue }) => {
-  const [value, setValue] = useState("");
-
-
-  const [shortenLink, setShortenLink] = useState("");
+const Urlshortener = () => {
+  const [link, setLink] = useState("");
+  const [short, setShort] = useState("");
   const [copied, setCopied] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const fetchData = async () => {
+  const getLJink = async () => {
     try {
       setLoading(true);
-      const res = await axios(
-        `https://api.shrtco.de/v2/shorten?url=${inputValue}`
-      );
-      setShortenLink(res.data.result.full_short_link);
+      await ShortenerAPI.get(`shorten?url=${link}`).then((response) => {
+        setShort(response.data.result.short_link);
+        // console.log(response.data.result.short_link);
+      });
     } catch (err) {
       setError(err);
     } finally {
@@ -25,34 +23,31 @@ const Urlshortener = ({ inputValue }) => {
     }
   };
 
-  const handleClick = () => {
-    inputValue(value);
-    setValue("");
-    fetchData();
+  const handleClick = (e) => {
+    e.preventDefault();
+    getLJink();
   };
 
-
   // useEffect(() => {
-  //   if (value.length) {
-  //     fetchData();
+  //   if (link.length) {
+  //     getLJink();
   //   }
-  // }, [value]);
+  // }, [link]);
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     setCopied(false);
-  //   }, 1000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCopied(false);
+    }, 1000);
 
-  //   return () => clearTimeout(timer);
-  // }, [copied]);
+    return () => clearTimeout(timer);
+  }, [copied]);
 
-
-  // if (loading) {
-  //   return <p className="noData">Loading...</p>;
-  // }
-  // if (error) {
-  //   return <p className="noData">Something wne t wrong :(</p>;
-  // }
+  if (loading) {
+    return <p className="noData">Loading...</p>;
+  }
+  if (error) {
+    return <p className="noData">Invalid URL. Please Try Again.</p>;
+  }
 
   return (
     <form className="form">
@@ -62,8 +57,8 @@ const Urlshortener = ({ inputValue }) => {
           className="url-input"
           type="text"
           placeholder="Enter your URL"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
+          value={link}
+          onChange={(e) => setLink(e.target.value)}
         />
         <input
           className="btn"
@@ -74,14 +69,16 @@ const Urlshortener = ({ inputValue }) => {
         {/* <button onClick={handleClick}>shorten</button> */}
       </div>
 
-      {/* {shortenLink && ( */}
-      <div className="result">
-        <p className="url-result">{shortenLink}</p>
-        <CopyToClipboard text={shortenLink} onCopy={() => setCopied(true)}>
-          <button className={copied ? "copied" : ""}>Copy to Clipboard</button>
-        </CopyToClipboard>
-      </div>
-      {/* )} */}
+      {short && (
+        <div className="result">
+          <p className="url-result">{short}</p>
+          <CopyToClipboard text={short} onCopy={() => setCopied(true)}>
+            <button className={copied ? "copied" : ""}>
+              Copy to Clipboard
+            </button>
+          </CopyToClipboard>
+        </div>
+      )}
     </form>
   );
 };
