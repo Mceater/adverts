@@ -1,0 +1,30 @@
+.AddBtn {
+    width: 100px;
+    height: 30px;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+}
+
+.Add {
+    position: absolute;
+    top: 40px;
+    right: 75px;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+    transition: cubic-bezier(1, 0, 0, 1)
+}
+
+.AddForm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    background: white;
+    border-radius: 10px;
+}

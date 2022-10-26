@@ -1,3 +1,14 @@
+.list-of-ads {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: auto;
+    width: 100%;
+    max-width: 1050px;
+    background: white;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+  }
 
 .list-header {
     display: grid;

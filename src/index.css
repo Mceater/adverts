@@ -151,17 +151,6 @@ textarea:focus, input:focus{
   margin-bottom: 30px;
 }
 
-.list-of-ads {
-  display: grid;
-  grid-template-columns: 100%;
-  margin: auto;
-  width: 100%;
-  max-width: 1050px;
-  background: white;
-  border-radius: 20px;
-  padding-bottom: 20px;
-}
-
 .url-input {
   border: none;
   margin-top: 10px;

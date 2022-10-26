@@ -13,7 +13,10 @@ mongoose.connect(url, {useNewUrlParser: true, useUnifiedTopology: true})
 
 const adSchema = new mongoose.Schema({
     userId: String,
-    img: String,
+    img: {
+        data: Buffer,
+        contentType: String
+    },
     url: String,
     startDate: Date,
     endDate: Date,
