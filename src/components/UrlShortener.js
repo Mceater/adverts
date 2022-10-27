@@ -14,7 +14,7 @@ const Urlshortener = () => {
       setLoading(true);
       await ShortenerAPI.get(`shorten?url=${link}`).then((response) => {
         setShort(response.data.result.short_link);
-        // console.log(response.data.result.short_link);
+        console.log(response.data.result.short_link);
       });
     } catch (err) {
       setError(err);

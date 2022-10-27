@@ -27,6 +27,7 @@ a {
 
 button {
   cursor: pointer;
+  height: 100%;
 }
 .container {
   display: block;
@@ -140,11 +141,13 @@ h2 {
 
 .applications {
   position: relative;
+  display: block;
   margin: auto;
   width: 100%;
   clear: both;
   text-align: center;
   padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 textarea:focus,
@@ -162,62 +165,6 @@ input:focus {
   border-radius: 10px;
   box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.5);
   margin-bottom: 30px;
-}
-
-.form {
-  position: relative;
-  margin: auto;
-  width: 100%;
-  max-width: 1200px;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 20px 0 35px 0;
-  border-radius: 10px;
-  box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.5);
-  margin-bottom: 30px;
-}
-
-.list-of-ads {
-  display: grid;
-  grid-template-columns: 100%;
-  margin: auto;
-  width: 100%;
-  max-width: 1050px;
-  background: white;
-  border-radius: 20px;
-  padding-bottom: 20px;
-}
-
-.list-header {
-  display: grid;
-  grid-template-columns: 60px auto 90px 90px 90px 70px;
-  margin: 15px 15px 0 15px;
-  border-bottom: 2px solid rgb(0, 0, 0, 1);
-}
-
-h3 {
-  margin-top: 0;
-}
-
-.ad-list {
-  display: grid;
-  grid-template-columns: 60px auto 90px 90px 60px 70px;
-  gap: 10px;
-  margin: 0 15px 0 15px;
-  border-bottom: 2px solid rgba(119, 119, 119, 0.5);
-}
-
-.ad-list button {
-  border: none;
-  background: none;
-}
-
-.ad-list button:hover {
-  background-color: rgb(199, 189, 189);
-}
-
-.ad-list img {
-  padding-top: 10px;
-  padding-left: 10px;
 }
 
 .url-input {
@@ -473,6 +420,34 @@ h3 {
 .pricing-button.is-featured:hover,
 .pricing-button.is-featured:active {
   background-color: rgb(255, 1, 1);
+}
+
+#hey {
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.dropdown-content {
+  position: fixed;
+  left: 20%;
+  float: right;
+  padding-right: 10%;
+  padding-bottom: 0%;
+}
+
+.dropdown-content p {
+  font-size: 20px;
+  float: right;
+  margin-right: 2%;
+}
+
+#keywords {
+  font-size: 20px;
+
+  margin-right: 2%;
 }
 
 @media screen and (max-width: 800px) {
