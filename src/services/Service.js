@@ -6,8 +6,8 @@ const getAll = () => {
     .then(res => res.data)
 }
 
-const createAd = async (newAd) => {
-    const res = await axios.post(baseUrl, newAd)
+const createAd = async (newAd, token) => {
+    const res = await axios.post(baseUrl, newAd, token)
     return res.data
 }
 

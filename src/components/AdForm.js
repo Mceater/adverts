@@ -44,7 +44,14 @@ const AdForm = ({user}) => {
         formData.append('endDate', formInfo.endDate)
         formData.append('categories', formInfo.categories)
         
-        Service.createAd(formData)
+        Service.createAd(formData, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(result => {
+            console.log(result)
+        })
     }
 
     if(mode === 'AdForm') {
@@ -81,3 +88,4 @@ const AdForm = ({user}) => {
 }
 
 export default AdForm
+

@@ -41,7 +41,7 @@ app.get('/api/ads/:id', (req, res) => {
     })
 })
 
-app.post ('/api/ads', upload.single("adPhoto"), async (req, res, next) => {
+app.post ('/api/ads', upload.single("adPhoto"), checkJWT, async (req, res, next) => {
     let fileName = req.file.originalname
     fs.rename(`./public/uploads/${req.file.filename}`, "./public/uploads/" + fileName, function(){})
     console.log(req.file)
