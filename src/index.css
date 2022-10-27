@@ -477,6 +477,38 @@ h3 {
   background-color: rgb(255, 1, 1);
 }
 
+#hey{
+  margin-top: 20px;
+  width: 300px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+
+
+.dropdown-content {
+ position: fixed;
+ left: 20%;
+ float:right;
+ padding-right: 10%;
+ padding-bottom: 0%;
+
+}
+
+.dropdown-content p {
+  font-size: 20px;
+  float:right;
+  margin-right: 2%;
+}
+
+#keywords {
+  
+  font-size: 20px;
+  
+  margin-right: 2%;
+}
+
 @media screen and (max-width: 800px) {
   .url-input {
     border-top-right-radius: 40px;
