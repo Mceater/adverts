@@ -11,8 +11,8 @@ const createAd = async (newAd, token) => {
     return res.data
 }
 
-const updateAd = (id, changedAd) => {
-    const req = axios.put(`${baseUrl}/${id}`, changedAd)
+const updateAd = async (id, changedAd) => {
+    const req = await axios.put(`${baseUrl}/${id}`, changedAd)
     return req.then(res => res.data)
 }
 

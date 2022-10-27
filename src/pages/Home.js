@@ -1,5 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import GooglePay from "../components/GooglePay";
+
 
 import Ad from '../components/Ad'
 
@@ -49,6 +51,7 @@ function Home ({data, user, isAuthenticated}) {
                     return (<Ad style={position[n]} key={ad.id} data={ad}/>)
                 })} 
             </div>
+
         </div>
     )
 }

@@ -2,6 +2,7 @@ import { useState } from "react"
 import { useAuth0 } from "@auth0/auth0-react"
 import Service from '../services/Service'
 import '../css/AdForm.css';
+import GooglePayButton from '@google-pay/button-react';
 
 
 
@@ -9,8 +10,8 @@ const AdForm = ({user}) => {
 
     const [mode, setMode] = useState('')
     const { getAccessTokenSilently } = useAuth0()
-    
-
+    const [days, setDays] = useState(0)
+    const [cost, setCost] = useState(0)
     const initialState = {userId: user.sub, adPhoto: null, url: '', startDate: '', endDate: '', categories: []}
     const [formInfo, setFromInfo] = useState(initialState)
     
@@ -33,8 +34,18 @@ const AdForm = ({user}) => {
 
     async function formHandler (e){
         e.preventDefault()
+        const date1 = new Date(formInfo.startDate)
+        const date2 = new Date(formInfo.endDate)
+        const diffTime = Math.abs(date2 - date1);
+        const duration = Math.ceil(diffTime / (1000 * 60 * 60 * 24) + 1)
+        setDays(duration)
+        setCost((duration/30).toFixed(2))
+        setMode('payment')
+
+    }
+
+    async function sendData () {
         const token = await getAccessTokenSilently()
-        console.log("Form submitted", formInfo, token)
 
         const formData = new FormData();
         formData.append('adPhoto', formInfo.adPhoto)
@@ -49,9 +60,6 @@ const AdForm = ({user}) => {
                 Authorization: `Bearer ${token}`
             }
         })
-        .then(result => {
-            console.log(result)
-        })
     }
 
     if(mode === 'AdForm') {
@@ -59,23 +67,33 @@ const AdForm = ({user}) => {
             <div className="AddForm">
                 <form onSubmit={formHandler}>
                     <label>Select Your Ad Img</label>
-                    <input type='file' name="file" onChange={updateField}/>
+                    <input type='file' name="file" onChange={updateField} required/>
 
                     <label>Enter Your URL</label>
-                    <input name='url' onChange={updateField}/>
+                    <input name='url' onChange={updateField} required/>
 
                     <label>From</label>
-                    <input type="date" name='startDate' onChange={updateField}/>
+                    <input type="date" name='startDate' onChange={updateField} required/>
 
                     <label>To</label>
-                    <input type="date" name='endDate' onChange={updateField}/>
+                    <input type="date" name='endDate' onChange={updateField} required/>
 
                     <label>Caterogies</label>
-                    <input name='categories' onChange={updateField}/>
+                    <input name='categories' onChange={updateField} required/>
 
                     <input type="submit" value="Save"/>
                 </form>
                 <button onClick={() => {setMode('Add')}}>Cancel</button>
+            </div>
+        )
+    }
+
+    if(mode === 'payment'){
+        return (
+            <div className="AddForm">
+                <p>Total: {days} days Cost: {cost}</p>
+                
+                <button onClick={() => {setMode('AdForm')}}>Cancel</button>
             </div>
         )
     }
