@@ -1,12 +1,10 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
 import Ad from "../components/Ad";
 
 function Home({ data, user, isAuthenticated }) {
   const { loginWithRedirect } = useAuth0();
-  const [searchTerm, setSearchTerm] = useState("");
-  const [showFilters, setShowFilters] = useState(false);
 
   let n = -1;
 
@@ -26,17 +24,6 @@ function Home({ data, user, isAuthenticated }) {
 
   return (
     <div>
-      <div id="myDropdown" className="dropdown-content">
-        <input
-          id="hey"
-          type="text"
-          placeholder="Search..."
-          onChange={(event) => {
-            setSearchTerm(event.target.value);
-          }}
-        />
-      </div>
-
       {!isAuthenticated && (
         <div className="btn-wrapper">
           <button onClick={() => loginWithRedirect()} className="login-btn">
@@ -53,21 +40,13 @@ function Home({ data, user, isAuthenticated }) {
       )}
 
       <div className="body">
-        {console.log(data)}
-        {data
-          .filter((ad) => {
-            if (searchTerm == "") {
-              return ad;
-            } else if (
-              ad.categories[0].toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return ad;
-            }
-          })
-          .map((ad) => {
-            n++;
-            return <Ad style={position[n]} key={ad.id} data={ad} />;
-          })}
+        {data.map((ad) => {
+          if (n === 10) {
+            n = -1;
+          }
+          n++;
+          return <Ad style={position[n]} key={ad.id} data={ad} />;
+        })}
       </div>
     </div>
   );
