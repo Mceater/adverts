@@ -21,6 +21,9 @@ function Price() {
                 <a href="#/" class="pricing-button is-featured">
                   Pay
                 </a>
+                <div className="paypal-button-container">
+                  <PayPalButtons />
+                </div>
               </div>
 
               <div class="pricing-plan">
