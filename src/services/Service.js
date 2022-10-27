@@ -6,8 +6,8 @@ const getAll = () => {
     .then(res => res.data)
 }
 
-const createAd = async (newAd, token) => {
-    const res = await axios.post(baseUrl, newAd, token)
+const createAd = async (newAd) => {
+    const res = await axios.post(baseUrl, newAd)
     return res.data
 }
 
@@ -21,4 +21,4 @@ const deleteData = async (id) => {
     return res.data
 }
 
-export default {getAll, deleteData} // exporting multiple objects
+export default {getAll, deleteData, createAd} // exporting multiple objects

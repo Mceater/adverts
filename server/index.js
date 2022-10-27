@@ -10,9 +10,6 @@ const fs = require('fs')
 
 const upload = multer({ dest: './public/uploads'})
 
-const rawData = fs.readFileSync("server/data.json")
-const data = JSON.parse(rawData)
-
 const checkJWT = jwt({
     secret: jwks.expressJwtSecret({
         cache: true,
@@ -20,36 +17,15 @@ const checkJWT = jwt({
         jwksRequestsPerMinute: 5,
         jwksUri: `https://${authConfig.REACT_APP_AUTH0_DOMAIN}/.well-known/jwks.json`
     }),
-    audience: `https://${authConfig.REACT_APP_AUDIENCE}`,
-    issuer: `https://${authConfig.REACT_APP_AUTH0_DOMAIN}`,
-    algorithms: ['RS256']
+    audience: authConfig.REACT_APP_AUDIENCE,
+    issuer: `https://${authConfig.REACT_APP_AUTH0_DOMAIN}/`,
+    algorithms: ["RS256"]
 })
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.use = (express.static('build'))
-
-app.post ('/api/ads', upload.single("adPhoto"), (req, res, next) => {
-    let fileName = req.file.originalname
-    fs.rename(`./public/uploads/${req.file.filename}`, "./public/uploads/" + fileName, function(){})
-
-    const body = req.body
-
-    const newAd = new Ad ({
-        userId: body.userId,
-        img: fileName,
-        url: body.url,
-        endDate: body.endDate,
-        categories: body.categories
-    })
-    newAd.save().then(result => {
-        res.json(result.toJSON)
-        console.log("like record saved")
-    })
-    res.json(newAd)
-    .catch(err => next(err))
-})
 
 app.get('/api/ads', (req, res) => {
     Ad.find({}).then(result => {
@@ -65,23 +41,27 @@ app.get('/api/ads/:id', (req, res) => {
     })
 })
 
-/*app.post('/api/ads', checkJWT, async (req, res, next) => {
+app.post ('/api/ads', upload.single("adPhoto"), async (req, res, next) => {
+    let fileName = req.file.originalname
+    fs.rename(`./public/uploads/${req.file.filename}`, "./public/uploads/" + fileName, function(){})
+    console.log(req.file)
+
     const body = req.body
 
     const newAd = new Ad ({
         userId: body.userId,
-        img: body.img,
+        img: fileName,
         url: body.url,
+        startDate: body.startDate,
         endDate: body.endDate,
         categories: body.categories
     })
     newAd.save().then(result => {
         res.json(result.toJSON)
-        console.log("like record saved")
+        console.log("Ad record saved")
     })
-    .catch(err => next(error))
+    .catch(err => next(err))
 })
-*/
 
 app.delete('/api/ads/:id', (req, res, next) => {
     Ad.findByIdAndRemove(req.params.id)

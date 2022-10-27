@@ -36,7 +36,7 @@ function Userpage ({data, user, isAuthenticated}) {
                 </div>
                 <div className='applications'>
                     <UrlShortener/>
-                    <UserAds data={userData}/>
+                    <UserAds data={userData} user={user}/>
                 </div>
             </div>
         )}

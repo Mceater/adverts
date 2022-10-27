@@ -1,11 +1,11 @@
 import AdList from './AdList'
 import AdForm from './AdForm'
 
-function UserAds ({data}) {
+function UserAds ({data, user}) {
 
     return (
         <div className='form'>
-            <AdForm/>
+            <AdForm user={user}/>
             <h2>Your Ads List</h2>
             <div className='list-of-ads'>
                 <div className='list-header'>

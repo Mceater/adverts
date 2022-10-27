@@ -18,10 +18,7 @@ post http://localhost:3001/api/ads http/1.1
 Content-Type: application/json
 
 {
-    "id": "11",
-    "userId": 1,
-    "img": "new IMG",
-    "url": "new URL"
+    "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IlZwRV…FLEZ6mQ2TZzn_Y-Hkl8g6MVv-N_ss7u72t4UJBbDe8AV83pjw"
 }
 
 ###
