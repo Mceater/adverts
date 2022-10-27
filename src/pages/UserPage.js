@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import UserAds from "../components/UserAds";
-import Urlshortener from "../components/Urlshortener";
+import Urlshortener from "../components/UrlShortener";
 
 function Userpage({ data, user, isAuthenticated }) {
   const { logout, loginWithRedirect } = useAuth0();
