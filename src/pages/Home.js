@@ -57,12 +57,14 @@ function Home({ data, user, isAuthenticated }) {
           .filter((ad) => {
             if (searchTerm === "") {
               return ad;
-            } else if (
-              ad.categories[0].toLowerCase().includes(searchTerm.toLowerCase())
-            ) {
-              return ad;
-            }
-          })
+            } else{ 
+                for(let i=0; i<ad.categories.length; i++)
+                {
+                if(ad.categories[i].toLowerCase().includes(searchTerm.toLowerCase())){
+                console.log(ad.categories[0])
+                return ad
+              }
+            }}return undefined})
           .map((ad) => {
             if (n === 10) {
               n = -1;
