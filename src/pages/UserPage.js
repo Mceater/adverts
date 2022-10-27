@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useState } from "react";
-import Urlshortener from "./Urlshortener";
-import AdList from "../components/AdList";
+import UserAds from "../components/UserAds";
+import Urlshortener from "../components/Urlshortener";
 
 function Userpage({ data, user, isAuthenticated }) {
   const { logout, loginWithRedirect } = useAuth0();
@@ -38,21 +37,7 @@ function Userpage({ data, user, isAuthenticated }) {
           </div>
           <div className="applications">
             <Urlshortener />
-            {/* <ShortenUrl /> */}
-            <div className="form">
-              <h2>Your List of Ads</h2>
-              <div className="list-of-ads">
-                <div className="list-header">
-                  <h3>Logo</h3>
-                  <h3>URL links</h3>
-                  <h3>Started</h3>
-                  <h3>Expire</h3>
-                </div>
-                {userData.map((obj) => (
-                  <AdList key={obj.id} data={obj} />
-                ))}
-              </div>
-            </div>
+            <UserAds data={userData} />
           </div>
         </div>
       )}

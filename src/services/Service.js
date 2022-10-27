@@ -6,4 +6,19 @@ const getAll = () => {
     .then(res => res.data)
 }
 
-export default {getAll} // exporting multiple objects
+const createAd = async (newAd, token) => {
+    const res = await axios.post(baseUrl, newAd, token)
+    return res.data
+}
+
+const updateAd = (id, changedAd) => {
+    const req = axios.put(`${baseUrl}/${id}`, changedAd)
+    return req.then(res => res.data)
+}
+
+const deleteData = async (id) => {
+    const res = await axios.delete(`${baseUrl}/${id}`)
+    return res.data
+}
+
+export default {getAll, deleteData} // exporting multiple objects

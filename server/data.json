@@ -1,125 +1,31 @@
 {
-    "ads": [
-        {
-            "id": "ab01",
-            "userId": "ABBA1234",
-            "img": "adidas.png",
-            "url": "https://www.adidas.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "shopping", "shoes", "clothing"
-            ]
-        },
-        {
-            "id": "ac02",
-            "userId": "ABBA1234",
-            "img": "chanel.png",
-            "url": "https://www.chanel.com/au/",
-            "startDate": "2020/10/10",
-            "endDate": "2022/12/27",
-            "categories": [
-                "shopping", "shoes", "clothing", "jewellery", "watches", "eyewear", "makeup", "skincare"
-            ]
-        },
-        {
-            "id": "ad03",
-            "userId": "ABBA1234",
-            "img": "youtube.png",
-            "url": "https://www.youtube.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2023/10/27",
-            "categories": [
-                "video", "entertaiment", "music", "education", "dance", "video game", "fun"
-            ]
-        },
-        {
-            "id": "ae04",
-            "userId": "ABBA1234",
-            "img": "hugo-boss.png",
-            "url": "https://www.hugoboss.com/au/",
-            "startDate": "2020/10/10",
-            "endDate": "2024/10/27",
-            "categories": [
-                "shopping", "shoes", "clothing", "accessories", "the suit", "gits"
-            ]
-        },
-        {
-            "id": "af05",
-            "userId": "ABBA1234",
-            "img": "dota.png",
-            "url": "https://www.dota2.com/home",
-            "startDate": "2020/10/10",
-            "endDate": "2024/10/27",
-            "categories": [
-                "video game", "multiplayer game", "game", "strategy game"
-            ]
-        },
-        {
-            "id": "ag06",
-            "userId": "ABBA1234",
-            "img": "code-pen.png",
-            "url": "https://codepen.io",
-            "startDate": "2021/10/10",
-            "endDate": "2022/12/27",
-            "categories": [
-                "coding", "css", "html", "javascript", "education", "code examples"
-            ]
-        },
-        {
-            "id": "ah07",
-            "userId": "ABBA1234",
-            "img": "google.png",
-            "url": "https://www.google.com/",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "graphic design", "designing", "wire frame", "desinging tool"
-            ]
-        },
-        {
-            "id": "ar08",
-            "userId": "ABBA1234",
-            "img": "pinterest.png",
-            "url": "https://www.pinterest.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "social media", "photo", "video", "ideas", "fun"
-            ]
-        },
-        {
-            "id": "ae09",
-            "userId": "ABBA1234",
-            "img": "gumtree.png",
-            "url": "https://www.gumtree.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "shopping", "shoes", "clothing", "housing", "rental", "books", "car", "job"
-            ]
-        },
-        {
-            "id": "aw10",
-            "userId": "ABBA1234",
-            "img": "mit.png",
-            "url": "https://www.netflix.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "movies", "video", "fun", "streaming"
-            ]
-        },
-        {
-            "id": "aw11",
-            "userId": "ABBA1234",
-            "img": "mit.png",
-            "url": "https://www.mit.com.au",
-            "startDate": "2020/10/10",
-            "endDate": "2022/10/27",
-            "categories": [
-                "movies", "video", "fun", "streaming"
-            ]
-        }
-    ]
+  "ads": [
+    {
+      "id": "ab01",
+      "userId": "ABBA1234",
+      "img": "adidas.png",
+      "url": "https://www.adidas.com.au",
+      "startDate": "2020/10/10",
+      "endDate": "2022/10/27",
+      "categories": ["shopping", "shoes", "clothing"]
+    },
+    {
+      "id": "ac02",
+      "userId": "ABBA1234",
+      "img": "chanel.png",
+      "url": "https://www.chanel.com/au/",
+      "startDate": "2020/10/10",
+      "endDate": "2022/12/27",
+      "categories": [
+        "shopping",
+        "shoes",
+        "clothing",
+        "jewellery",
+        "watches",
+        "eyewear",
+        "makeup",
+        "skincare"
+      ]
+    }
+  ]
 }
