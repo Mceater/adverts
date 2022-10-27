@@ -8,6 +8,7 @@ import AboutUs from './pages/AboutUs';
 import UserPage from './pages/UserPage';
 import Services from './pages/Services';
 import Price from './pages/Price';
+import Navbar from './components/Navbar';
 
 function App() {
   const [data, setData] = useState([])
@@ -27,16 +28,9 @@ function App() {
 
   return (
     <div className='container'>
+      
       <Router>
-        <div className="footer">
-            <ul>
-              <Link key="b" to='/'><img className='logo' src="/logo/Find-It-White.png" alt="User"/></Link>
-              <li><Link key="b" to='about-us'>About Us</Link></li>
-              <li><Link key="c" to='services'>Services</Link></li>
-              <li><Link key="d" to='price'>Price</Link></li>
-            </ul>
-        </div>
-
+        <Navbar/>
         <Routes>
           <Route path="/" element={<Home data={data} user={user} isAuthenticated={isAuthenticated}/>}/>
           <Route path="/userpage" element={<UserPage data={data} user={user} isAuthenticated={isAuthenticated}/>}/>
