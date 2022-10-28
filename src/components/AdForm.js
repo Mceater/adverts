@@ -5,10 +5,10 @@ import '../css/AdForm.css';
 
 
 
-const AdForm = ({user}) => {
+const AdForm = () => {
 
     const [mode, setMode] = useState('')
-    const { getAccessTokenSilently } = useAuth0()
+    const { getAccessTokenSilently, user } = useAuth0()
     const initialState = {userId: user.sub, adPhoto: null, url: '', startDate: '', endDate: '', categories: []}
     const [formInfo, setFromInfo] = useState(initialState)
     

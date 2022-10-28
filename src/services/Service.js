@@ -21,4 +21,4 @@ const deleteData = async (id) => {
     return res.data
 }
 
-export default {getAll, deleteData} // exporting multiple objects
+export default {getAll, deleteData, createAd} // exporting multiple objects

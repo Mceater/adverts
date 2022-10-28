@@ -28,6 +28,9 @@ const AdList = ({data, function_edit, function_extend}) => {
 
     function deleteAd () {
         Service.deleteData(data.id)
+        .then(res => {
+            console.log(res)
+        })
     }
 
     function updateField(e){
@@ -81,7 +84,3 @@ const AdList = ({data, function_edit, function_extend}) => {
 }
 
 export default AdList
-
-/* 
-) 
-*/
