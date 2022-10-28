@@ -181,6 +181,18 @@ input:focus {
   box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
 }
 
+.urlbtn {
+  border: none;
+  margin-top: 10px;
+  padding: 25px 35px 25px 35px;
+  font-size: 1.25rem;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: white;
+  border-right: thick double rgb(19, 31, 63, 0.5);
+  box-shadow: 2px 2px 2px rgb(0, 0, 0, 0.5);
+}
+
 .btn {
   border: none;
   margin-top: 10px;
@@ -233,6 +245,9 @@ input:focus {
 }
 
 /* Result */
+
+
+
 .result {
   position: relative;
   margin: auto;

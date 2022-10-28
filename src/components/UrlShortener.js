@@ -61,7 +61,7 @@ const Urlshortener = () => {
           onChange={(e) => setLink(e.target.value)}
         />
         <input
-          className="btn"
+          className="urlbtn"
           type="submit"
           value="Shorten URL"
           onClick={handleClick}
@@ -72,7 +72,7 @@ const Urlshortener = () => {
       {short && (
         <div className="result">
           <p className="url-result">https://{short}</p>
-          <CopyToClipboard text= {short} onCopy={() => setCopied(true)}>
+          <CopyToClipboard text= {short} onCopy={() => setCopied("https://"+{short})}>
             <button className={copied ? "copied" : ""}>
               Copy to Clipboard
             </button>

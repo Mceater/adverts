@@ -18,9 +18,9 @@ function Price() {
                   <li class="pricing-features-item">3 months</li>
                 </ul>
                 <span class="pricing-price">$0.01</span>
-                <a href="#/" class="pricing-button is-featured">
+                {/* <a href="#/" class="pricing-button is-featured">
                   Pay
-                </a>
+                </a> */}
                 <div className="paypal-button-container">
                   <PayPalButtons />
                 </div>
@@ -34,9 +34,9 @@ function Price() {
                   <li class="pricing-features-item">6 months</li>
                 </ul>
                 <span class="pricing-price">$0.019</span>
-                <a href="#/" class="pricing-button is-featured">
+                {/* <a href="#/" class="pricing-button is-featured">
                   Pay
-                </a>
+                </a> */}
                 <div className="paypal-button-container">
                   <PayPalButtons />
                 </div>
