@@ -71,8 +71,8 @@ const Urlshortener = () => {
 
       {short && (
         <div className="result">
-          <p className="url-result">{short}</p>
-          <CopyToClipboard text={short} onCopy={() => setCopied(true)}>
+          <p className="url-result">https://{short}</p>
+          <CopyToClipboard text= {short} onCopy={() => setCopied(true)}>
             <button className={copied ? "copied" : ""}>
               Copy to Clipboard
             </button>
