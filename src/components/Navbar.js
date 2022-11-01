@@ -1,15 +1,17 @@
-import React, { useContext } from "react";
+// import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import { Auth0Context } from "auth0-react";
+// import { Auth0Context } from "auth0-react";
 
-const Navbar = (isAuthenticated) => {
+const Navbar = () => {
+  const {isAuthenticated} = useAuth0()
   const unauthenticatedNavBar = () => {
     return (
       <>
         <Link key="a" to="/">
           <li className="navbar-brand">
-            <img src="Find-It-White.png" />
+            <img src="/logo/Find-It-White.png"  style={{ width: "50px", height: "35px" }}/>
+           
           </li>
         </Link>
         <Link key="b" to="about-us">
