@@ -1,0 +1,16 @@
+.home {
+    position: absolute;
+    background: yellow;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.search input {
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    border-radius: 20px;
+    padding: 6px;
+    padding-left: 10px;
+}

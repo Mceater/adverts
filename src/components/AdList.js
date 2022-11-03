@@ -1,12 +1,10 @@
 import { useState } from "react"
-import Service from '../services/Service'
+import Service from '../service/Service'
+import '../styles/ad-list.css';
 
-import '../css/AdListStyle.css';
-
-const AdList = ({data, function_edit, function_extend}) => {
+const AdList = ({data}) => {
 
     const [mode, setMode] = useState ('')
-    const endDate = data.endDate.split("T", 1)
 
     const edit = () => {
         setMode('edit')
@@ -28,6 +26,9 @@ const AdList = ({data, function_edit, function_extend}) => {
 
     function deleteAd () {
         Service.deleteData(data.id)
+        .then(res => {
+            console.log(res)
+        })
     }
 
     function updateField(e){
@@ -49,7 +50,6 @@ const AdList = ({data, function_edit, function_extend}) => {
                     placeholder={data.url}
                     onChange={updateField}
                 />
-                <p>{endDate}</p>
                 <button type="submit">Save</button>
             </form>
             
@@ -71,17 +71,11 @@ const AdList = ({data, function_edit, function_extend}) => {
             </div>
             <div className="ad-data">
                 <p>{data.url}</p>
-                <p>{endDate}</p>
             </div>
             
-            <button onClick={edit}>Edit</button>
-            <button onClick={extend}>Extend</button>
+            <button className="edit-btn" onClick={edit}>Edit</button>
         </div>
     )
 }
 
 export default AdList
-
-/* 
-) 
-*/

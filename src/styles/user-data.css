@@ -1,0 +1,19 @@
+img {
+    width: 100%;
+}
+
+.user-data {
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(0, 0, 0, 0.25);
+    padding: 20px 0 35px 0;
+    border-radius: 10px;
+    box-shadow: inset 2px 2px 2px rgb(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: 160px;
+    font-family: 'Crete Round', serif;
+}
+

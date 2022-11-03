@@ -1,8 +1,10 @@
-function Price () {
-    return(
-     <div>TPrice
+import '../styles/home-page.css'
 
-     </div>   
+function Price (){
+    return (
+        <div className='home'>
+            This is price
+        </div>
     )
 }
 

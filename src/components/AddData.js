@@ -1,21 +1,15 @@
-import { useState } from "react"
+import { useEffect,useState } from "react"
 import { useAuth0 } from "@auth0/auth0-react"
-import Service from '../services/Service'
-import '../css/AdForm.css';
-import GooglePayButton from '@google-pay/button-react';
+import Service from '../service/Service'
+import '../styles/add-data.css';
 
 
-
-const AdForm = ({user}) => {
-
+function AddData(){
     const [mode, setMode] = useState('')
-    const { getAccessTokenSilently } = useAuth0()
-    const [days, setDays] = useState(0)
-    const [cost, setCost] = useState(0)
+    const { getAccessTokenSilently, user } = useAuth0()
     const initialState = {userId: user.sub, adPhoto: null, url: '', startDate: '', endDate: '', categories: []}
     const [formInfo, setFromInfo] = useState(initialState)
     
-
     function updateField (e){
         const name = e.target.attributes.name.value
         if(name === 'file'){
@@ -32,18 +26,6 @@ const AdForm = ({user}) => {
         }
     }
 
-    async function formHandler (e){
-        e.preventDefault()
-        const date1 = new Date(formInfo.startDate)
-        const date2 = new Date(formInfo.endDate)
-        const diffTime = Math.abs(date2 - date1);
-        const duration = Math.ceil(diffTime / (1000 * 60 * 60 * 24) + 1)
-        setDays(duration)
-        setCost((duration/30).toFixed(2))
-        setMode('payment')
-
-    }
-
     async function sendData () {
         const token = await getAccessTokenSilently()
 
@@ -51,8 +33,6 @@ const AdForm = ({user}) => {
         formData.append('adPhoto', formInfo.adPhoto)
         formData.append('userId', formInfo.userId)
         formData.append('url', formInfo.url)
-        formData.append('startDate', formInfo.startDate)
-        formData.append('endDate', formInfo.endDate)
         formData.append('categories', formInfo.categories)
         
         Service.createAd(formData, {
@@ -62,21 +42,20 @@ const AdForm = ({user}) => {
         })
     }
 
+    async function formHandler (e){
+        e.preventDefault()
+        sendData();
+    }
+
     if(mode === 'AdForm') {
         return(
             <div className="AddForm">
-                <form onSubmit={formHandler}>
+                <form onSubmit={formHandler} className="sub-form">
                     <label>Select Your Ad Img</label>
                     <input type='file' name="file" onChange={updateField} required/>
 
                     <label>Enter Your URL</label>
                     <input name='url' onChange={updateField} required/>
-
-                    <label>From</label>
-                    <input type="date" name='startDate' onChange={updateField} required/>
-
-                    <label>To</label>
-                    <input type="date" name='endDate' onChange={updateField} required/>
 
                     <label>Caterogies</label>
                     <input name='categories' onChange={updateField} required/>
@@ -87,16 +66,6 @@ const AdForm = ({user}) => {
             </div>
         )
     }
-
-    if(mode === 'payment'){
-        return (
-            <div className="AddForm">
-                <p>Total: {days} days Cost: {cost}</p>
-                
-                <button onClick={() => {setMode('AdForm')}}>Cancel</button>
-            </div>
-        )
-    }
     
     return(
         <div className='Add'>
@@ -104,6 +73,4 @@ const AdForm = ({user}) => {
         </div>
     )
 }
-
-export default AdForm
-
+export default AddData;
