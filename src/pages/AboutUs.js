@@ -2,7 +2,7 @@ import Member from "../components/Member";
 
 function AboutUs (){
 
-    const aboutMunkh = "Proud member of GROUP K. Main role in Group K is UI. Tried my best to make sure our web application is looking GOOOOD. Alsway welcome to deligthful feedbacks and hates criticism (be cariful and have fun)."
+    const aboutMunkh = "Proud member of GROUP K. Main role in Group K is UI. Tried my best to make sure our web application looks GOOOOD. Alsway welcome to deligthful feedbacks and hates criticism (be careful and have fun)."
     
     return (
         <div className='home'>

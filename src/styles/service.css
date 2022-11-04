@@ -1,0 +1,11 @@
+.service {
+    max-width: 900px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.service-item{
+    margin-top: 50px;
+    font-size: 25px;
+    text-align: justify;
+}
