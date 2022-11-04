@@ -8,13 +8,13 @@ function SearchBar({ placeholder, data, setSearch }) {
   
   const [filteredData, setFilteredData] = useState([]);
   const [changeFilter, setChangeFilter ] = useState([]);
-
+  const [searchWord, setSearchWord] = useState("");
 
 
 
   const handleFilter = (event) => {
     setChangeFilter([])
-
+    setSearchWord( event.target.value)
     const searchWord = event.target.value;
     setSearch(searchWord)
     for(let i = 0; i<data.length; i++){
@@ -35,12 +35,19 @@ function SearchBar({ placeholder, data, setSearch }) {
 
 }
 
+ const changeInput = (e) =>{
+  console.log(e.target.value);
+  setSearchWord(e.target.value)
+  setSearch(searchWord)
+
+ }
+
   
   return (
 
     <div className="search">
         <div className="searchInputs">
-            <input type="text" placeholder={placeholder} onChange={handleFilter}/>
+            <input type="text" value={searchWord} onChange={handleFilter}/>
            
         </div>
         {filteredData.length !== 0 && (
@@ -50,7 +57,7 @@ function SearchBar({ placeholder, data, setSearch }) {
                 <div key={key}>
                   {
                     value.map((categories, keys) => {
-                      return <div key={keys}><p>{categories}</p></div>
+                      return <div key={keys}><button value={categories} onClick={changeInput}>{categories}</button></div>
                   })}
                </div>
               );
