@@ -78,3 +78,21 @@ Weekly Activities:
 -          Topics discussing what members have done, whether are milestone has been completed, what to do before the presentation and work designation for further  weeks,discussed to improve our work production and improve our base product before the next milestone
   Progress:
 -          Solid progress regarding the milestone, working now for final submission
+
+Week 12-13 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
+
+-          Update Css Code of the entire website order everything and get ready for final submission
+-          Figuring out delpoyment
+-          Fixing bugs
+  Progress:
+-          Working towards full deployment of the application
+  Meetings:
+-          Group meeting on 4/11/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Farhan, Munkh
+-          Meeting conducted online via discord
+-          Topics discussed invloved were getting ready for deployment, ceratain last minute features to implement as well as to fix all exisiting bugs
+  Progress:
+-          Solid progress nearly finished as of 4/11/2022
