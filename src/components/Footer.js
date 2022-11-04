@@ -14,13 +14,13 @@ function Footer ({isAuthenticated}){
                 <li><Link key="c" to='services'>Services</Link></li>
                 <li className="nav-item nav-link">   
                     <a href="https://www.facebook.com/people/Find-it/100087678420437/?is_tour_dismissed=true">
-                    <FontAwesomeIcon icon={faFacebook} /> 
+                    <FontAwesomeIcon icon={faFacebook} className="linked-icon"/> 
                     </a> 
                     <a href="https://www.instagram.com/findittss/">
-                    <FontAwesomeIcon icon={faInstagram} /> 
+                    <FontAwesomeIcon icon={faInstagram} className="linked-icon"/> 
                     </a> 
                     <a href="https://twitter.com/FindItWebsite">
-                    <FontAwesomeIcon icon={faTwitter} /> 
+                    <FontAwesomeIcon icon={faTwitter} className="linked-icon"/> 
                     </a> 
                     </li>
                 </ul>
