@@ -12,7 +12,7 @@ const createAd = async (newAd, token) => {
 }
 
 const updateAd = async (id, changedAd) => {
-    const req = await axios.put(`${baseUrl}/${id}`, changedAd)
+    const req = await axios.post(`${baseUrl}/${id}`, {url: changedAd})
     return req.then(res => res.data)
 }
 
@@ -21,4 +21,4 @@ const deleteData = async (id) => {
     return res.data
 }
 
-export default {getAll, deleteData, createAd} // exporting multiple objects
+export default {getAll, deleteData, createAd, updateAd} // exporting multiple objects

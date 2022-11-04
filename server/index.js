@@ -63,12 +63,19 @@ app.post ('/api/ads', upload.single("adPhoto"), checkJWT, async (req, res, next)
     .catch(err => next(err))
 })
 
+app.post('api/ads/:id', (req, res) => {
+    const id = req.body.id;
+    const url = req.body.url;
+
+    Ad.findByIdAndUpdate(id, {$set: {url: url}}, (err, doc) => {
+        if(err) return console.log(err)
+        res.json(doc)
+    })
+})
+
 app.delete('/api/ads/:id', (req, res, next) => {
     Ad.findByIdAndRemove(req.params.id)
-    .then(result => {
-        res.status(204).end()
-    })
-    .catch(error => next(error)) 
+    
 })
 
 const PORT = 3001

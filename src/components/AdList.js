@@ -6,6 +6,7 @@ const AdList = ({data, updateAdHandler}) => {
 
     const [mode, setMode] = useState ('')
     const [allAds, setData] = useState([])
+    const [url, setUrl] = useState('')
 
     const edit = () => {
         setMode('edit')
@@ -14,6 +15,7 @@ const AdList = ({data, updateAdHandler}) => {
 
     function save(){
         setMode('save')
+        Service.updateAd(data.id, url)
         console.log(data)
     }
 
@@ -31,7 +33,7 @@ const AdList = ({data, updateAdHandler}) => {
     }
 
     function updateField(e){
-        const url = e.target.value
+        setUrl(e.target.value)
         console.log(url)
     }
 
