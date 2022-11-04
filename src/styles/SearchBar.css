@@ -31,6 +31,10 @@
       font-size: 35px;
     }
     
+    #datacategory{
+     background-color: yellow;
+    }
+
     .dataResult {
       margin-top: 5px;
       margin-left: 50px;
@@ -39,7 +43,7 @@
       background-color: white;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       overflow: hidden;
-      overflow-y: auto;
+      overflow-y: none;
     }
   
     .dataResult::-webkit-scrollbar {
@@ -49,7 +53,9 @@
       height: 0;
       background-color: transparent;
     }
-    
+    #order{
+      display: flex;
+    }
     
     .dataResult .dataItem {
       width: 100%;
