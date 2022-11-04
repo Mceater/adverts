@@ -13,6 +13,7 @@ function SearchBar({ placeholder, data, setSearch }) {
 
 
   const handleFilter = (event) => {
+    
     setChangeFilter([])
     setSearchWord( event.target.value)
     const searchWord = event.target.value;
@@ -35,10 +36,10 @@ function SearchBar({ placeholder, data, setSearch }) {
 
 }
 
- const changeInput = (e) =>{
-  console.log(e.target.value);
-  setSearchWord(e.target.value)
-  setSearch(searchWord)
+ const changeInput = (event) =>{
+ 
+  setSearchWord(event.target.value);
+  setSearch(event.target.value);
 
  }
 
