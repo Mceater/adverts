@@ -12,7 +12,9 @@ function SearchBar({ placeholder, data, setSearch }) {
 
 
 
-  const handleFilter = (event) => {
+  
+
+  const handleFilter = async (event) => {
     
     setChangeFilter([])
     setSearchWord( event.target.value)
@@ -23,10 +25,11 @@ function SearchBar({ placeholder, data, setSearch }) {
                
                 return value.toLowerCase().includes(searchWord.toLowerCase())
             })
-    
-    setChangeFilter(oldArray => [...oldArray, newFilter])
-
+    setChangeFilter(oldArray=>[...oldArray, newFilter]);
+   
 };
+
+ 
     if(searchWord === ""){
       setFilteredData("")
     }
@@ -55,10 +58,10 @@ function SearchBar({ placeholder, data, setSearch }) {
         <div className="dataResult">
             {filteredData.map((value, key)=>{
               return(
-                <div key={key}>
+                <div id="order" key={key}>
                   {
                     value.map((categories, keys) => {
-                      return <div key={keys}><button value={categories} onClick={changeInput}>{categories}</button></div>
+                      return <div key={keys}><button id="datacategory" value={categories} onClick={changeInput}>{categories}</button></div>
                   })}
                </div>
               );
