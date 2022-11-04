@@ -45,7 +45,7 @@ const AdList = ({data, updateAdHandler}) => {
         return(
             <div className="ad-list">
             <div className="list-img">
-                <img src={"/uploads/"+ data.img} alt="User" />
+                <img src={"/uploads/"+ data.img} alt="User"/>
             </div>
             <form className="adForm" onSubmit={save}>
                 <input
