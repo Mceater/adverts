@@ -38,7 +38,7 @@
       border-radius: 5px;
       border:1px solid black;
       font-family: 'Lato', sans-serif;
-
+      
  
       cursor: pointer;
       position: relative;
@@ -46,14 +46,15 @@
       box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
       7px 7px 20px 0px rgba(0,0,0,.1),
       4px 4px 5px 0px rgba(0,0,0,.1);
-      background: #FFEFD5;
+
+
       
 
     }
     #datacategory:hover {
-      background-color: white; 
+      background: white; 
       color: black; 
-      border: 2px solid #008CBA;
+      border: 3px solid #008CBA;
     }
     
 

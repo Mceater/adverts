@@ -10,7 +10,7 @@ function SearchBar({ placeholder, data, setSearch }) {
   const [searchWord, setSearchWord] = useState("");
   
 
-
+  var colors = ['#FFEFD5', '#FFF1D0', '#FFF0B7'];
 
   const handleFilter = async (event) => {
     
@@ -63,7 +63,7 @@ function SearchBar({ placeholder, data, setSearch }) {
                 <div id="order" key={key}>
                   {
                     value.map((categories, keys) => {
-                      return <div key={keys}><button id="datacategory" value={categories} onClick={changeInput}>{categories}</button></div>
+                      return <div key={keys}><button id="datacategory" style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={categories} onClick={changeInput}>{categories}</button></div>
                   })}
                </div>
               );
