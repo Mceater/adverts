@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/SearchBar.css"
 
-function SearchBar({ placeholder, data, setSearch }) {
+function SearchBar({ data, setSearch }) {
   
   
 
@@ -54,7 +54,7 @@ function SearchBar({ placeholder, data, setSearch }) {
 
     <div className="search">
         <div className="searchInputs">
-            <input type="text" value={searchWord} onChange={handleFilter}/>    
+              <input type="text" placeholder="Search For Categories" value={searchWord} onChange={handleFilter}/>    
         </div>
         {filteredData.length !== 0 && (
         <div className="dataResult">
