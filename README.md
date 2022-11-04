@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+Weekly Reports
+Week 8-9 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+-          Complete milestone for mongo dB connection by next week
+-          Focus on user authentication methods, possibly completing authentication
+-          Ongoing: backend work
 
-## Available Scripts
+Progress:
 
-In the project directory, you can run:
+-          Progress checks on current week 9 presentation as well as work on front end and back end
+  Meetings:
+-          Group meeting on 06/10/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Munkh, Farhan
+-          Meeting conducted online via discord
+-          Topics discussing what members have done, whether are milestone has been completed
+  Progress:
+-          Solid progress regarding the milestone, have completed what we need to, looking at future progress
 
-### `npm start`
+Week 9-10 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+-          Start initial user authentication
+-          Test user data flow and integrity
+-          Ongoing: MongoDB Work(finished register, focus on login), Researching external user Authentication methods
+  Progress:
+-          Progress checks on current week 10 presentation as well as work on front end and back end
+  Meetings:
+-          Group meeting on 13/10/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Farhan
+-          Meeting conducted online via discord
+-          Topics discussing what members have done, whether are milestone has been completed, what to do before the presentation and work designation for further  weeks,discussed to improve our work production and improve our base product before the next milestone
+  Progress:
+-          Solid progress regarding the milestone, have nearly completed what we need to do and expect to get started quickly on next milestone(as it is quite difficult milestone)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Week 10-11 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
 
-### `npm test`
+-          Finish user authentication (using Auth0)
+-          Test user data flow and integrity
+-          Add url shortner
+-          Make connection to mongodb with home page
+-          Make connection to mongod with user profile page
+-          New design of website including our company's logo
+-          Ongoing: Payment Processing, Researching ways to make our app more obvious to what we are actually doing
+  Progress:
+-          Progress checks on current week 11 presentation as well as work on front end and back end
+  Meetings:
+-          Group meeting on 20/10/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Farhan, Munkh
+-          Meeting conducted online via discord
+-          Topics discussing what members have done, whether are milestone has been completed, what to do before the presentation and work designation for further  weeks,discussed to improve our work production and improve our base product before the next milestone
+  Progress:
+-          Solid progress regarding the milestone, have completed what we need to do and expect to get started quickly on next milestone
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Week 11-12 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
 
-### `npm run build`
+-          Create Paypal processing implmentation
+-          Url Shortner functional
+-          Design Decision Changes
+-          Able to create/delete ads
+-          Ongoing: testing payment processing
+  Progress:
+-          Progress checks on current week 12 presentation as well as work on front end and back end
+  Meetings:
+-          Group meeting on 28/10/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Farhan, Munkh
+-          Meeting conducted online via discord
+-          Topics discussing what members have done, whether are milestone has been completed, what to do before the presentation and work designation for further  weeks,discussed to improve our work production and improve our base product before the next milestone
+  Progress:
+-          Solid progress regarding the milestone, working now for final submission
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Week 12-13 Meeting/weekly notes
+Subject: Group K
+Weekly Activities:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-          Update Css Code of the entire website order everything and get ready for final submission
+-          Figuring out delpoyment
+-          Fixing bugs
+  Progress:
+-          Working towards full deployment of the application
+  Meetings:
+-          Group meeting on 4/11/22 at ~ 8:00 pm
+-          Meeting length 40 minutes
+-          Members attending: Austin, Shane, Farhan, Munkh
+-          Meeting conducted online via discord
+-          Topics discussed invloved were getting ready for deployment, ceratain last minute features to implement as well as to fix all exisiting bugs
+  Progress:
+-          Solid progress nearly finished as of 4/11/2022
