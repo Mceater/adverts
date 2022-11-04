@@ -1,6 +1,7 @@
 .home {
     position: absolute;
-    background: yellow;
+    background: url("/public/uploads/background.jpg");
+    background-size: contain;
     width: 100%;
     min-height: 100vh;
     overflow: hidden;
