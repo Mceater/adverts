@@ -1,8 +1,8 @@
 import axios from "axios" // axios is connecting backEnd with frontEnd
 const baseUrl = 'http://localhost:3001/api/ads' // before build url was 'http://localhost:3001/api/units'
 
-const getAll = () => {
-    return axios.get(baseUrl)
+const getAll = async () => {
+    return await axios.get(baseUrl)
     .then(res => res.data)
 }
 
@@ -11,8 +11,8 @@ const createAd = async (newAd, token) => {
     return res.data
 }
 
-const updateAd = (id, changedAd) => {
-    const req = axios.put(`${baseUrl}/${id}`, changedAd)
+const updateAd = async (id, changedAd) => {
+    const req = await axios.put(`${baseUrl}/${id}`, changedAd)
     return req.then(res => res.data)
 }
 

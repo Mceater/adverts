@@ -1,3 +1,5 @@
+import '../styles/ad.css'
+
 function Ad ({data, style}){
 
     return(

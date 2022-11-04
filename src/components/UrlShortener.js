@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CopyToClipboard from "react-copy-to-clipboard";
-import ShortenerAPI from "../services/ShortenerAPI";
+import ShortenerAPI from "../service/ShortenerAPI";
+import '../styles/url-shortener.css';
 
 const Urlshortener = () => {
   const [link, setLink] = useState("");
@@ -28,12 +29,6 @@ const Urlshortener = () => {
     getLJink();
   };
 
-  // useEffect(() => {
-  //   if (link.length) {
-  //     getLJink();
-  //   }
-  // }, [link]);
-
   useEffect(() => {
     const timer = setTimeout(() => {
       setCopied(false);
@@ -43,14 +38,22 @@ const Urlshortener = () => {
   }, [copied]);
 
   if (loading) {
-    return <p className="noData">Loading...</p>;
+    return (
+        <div className="shortener">
+            <p className="noData">Loading...</p>
+        </div>
+    );
   }
   if (error) {
-    return <p className="noData">Invalid URL. Please Try Again.</p>;
+    return (
+        <div className="shortener">
+            <p className="noData">Invalid URL. Please refresh the page and Try Again.</p>
+        </div>
+    );
   }
 
   return (
-    <form className="form">
+    <form className="shortener">
       <h2>URL Shortener</h2>
       <div>
         <input

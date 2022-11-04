@@ -1,9 +1,11 @@
-function AboutUs () {
-    return(
-     <div>This is AboutUS
 
-     </div>   
+
+function AboutUs (){
+    return (
+        <div className='home'>
+            Thisi is about us
+        </div>
     )
 }
 
-export default AboutUs
+export default AboutUs;

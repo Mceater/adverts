@@ -1,0 +1,54 @@
+.ad-wrapper {
+    position: absolute;
+    width: 115px;
+    height: 115px;
+    filter: drop-shadow(3px 6px 3px rgba(50, 50, 0, 0.5));
+    animation: float 1s ease-out;
+    opacity: 0.85;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.ad-wrapper:hover {
+    z-index: 100000;
+    opacity: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(10%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.85;
+    }
+}
+
+.hex {
+display: flex;
+align-items: center;
+justify-content: center;
+width: 115px;
+height: 100px;
+clip-path: polygon(0 50%, 21% 0, 79% 0, 100% 50%, 79% 100%, 21% 100%);
+background: rgb(255, 1, 1);
+}
+
+.hex::before {
+    position: absolute;
+    content: "";
+    width: 103px;
+    height: 90px;
+    background: rgb(255, 255, 255); /*hex logo background color*/
+    clip-path: polygon(0 50%, 21% 0, 79% 0, 100% 50%, 79% 100%, 21% 100%);
+  }
+
+.ad-logo {
+    width: 60%;
+    z-index: 1;
+}
+
+.style1 {
+    transform: translateY(25px);
+}

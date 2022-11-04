@@ -1,48 +1,35 @@
-import { useAuth0 } from "@auth0/auth0-react";
-import UserAds from "../components/UserAds";
-import Urlshortener from "../components/UrlShortener";
+import LoginBtn from '../components/LoginBtn';
+import Urlshortener from '../components/UrlShortener';
+import UserData from '../components/UserData';
+import AddData from '../components/AddData';
+import '../styles/user-page.css';
+import { useEffect } from 'react';
 
-function Userpage({ data, user, isAuthenticated }) {
-  const { logout, loginWithRedirect } = useAuth0();
-  let userData = [];
+function UserPage ({user, data, isAuth}){
 
-  if (user !== undefined) {
-    userData = data.filter((obj) => obj.userId === user.sub);
-  }
+    let userData = [];
 
-  return (
-    <div className="body">
-      {!isAuthenticated && (
-        <div>
-          <h1>Please Login</h1>
-          <div className="btn-wrapper">
-            <button onClick={() => loginWithRedirect()} className="login-btn">
-              Login
-            </button>
-          </div>
+    if (user !== undefined) {
+        userData = data.filter((obj) => obj.userId === user.sub);
+    }
+
+    return (
+        <div className='home'>
+            {isAuth && (
+                <div>
+                    <div className='header'>
+                        <div className="userPhoto">
+                            <img src={user.picture} alt="User" />
+                        </div>
+                        <h1>{user.name}</h1>
+                    </div>
+                    <LoginBtn userPage={true}/>
+                    <Urlshortener/>
+                    <UserData data={userData} />
+                </div>            
+            )}
         </div>
-      )}
-      {isAuthenticated && (
-        <div>
-          <div className="header">
-            <div className="userPhoto">
-              <img src={user.picture} alt="User" />
-            </div>
-            <h1>{user.name}</h1>
-            <div className="btn-wrapper">
-              <button onClick={() => logout()} className="login-btn">
-                Logout
-              </button>
-            </div>
-          </div>
-          <div className="applications">
-            <Urlshortener />
-            <UserAds data={userData} />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    )
 }
 
-export default Userpage;
+export default UserPage;

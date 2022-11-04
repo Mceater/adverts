@@ -1,12 +1,10 @@
-import { useState } from "react"
+import { useEffect,useState } from "react"
 import { useAuth0 } from "@auth0/auth0-react"
-import Service from '../services/Service'
-import '../css/AdForm.css';
+import Service from '../service/Service'
+import '../styles/add-data.css';
 
 
-
-const AdForm = () => {
-
+function AddData(){
     const [mode, setMode] = useState('')
     const { getAccessTokenSilently, user } = useAuth0()
     const initialState = {userId: user.sub, adPhoto: null, url: '', startDate: '', endDate: '', categories: []}
@@ -35,8 +33,6 @@ const AdForm = () => {
         formData.append('adPhoto', formInfo.adPhoto)
         formData.append('userId', formInfo.userId)
         formData.append('url', formInfo.url)
-        formData.append('startDate', formInfo.startDate)
-        formData.append('endDate', formInfo.endDate)
         formData.append('categories', formInfo.categories)
         
         Service.createAd(formData, {
@@ -51,23 +47,15 @@ const AdForm = () => {
         sendData();
     }
 
-    
-
     if(mode === 'AdForm') {
         return(
             <div className="AddForm">
-                <form onSubmit={formHandler}>
+                <form onSubmit={formHandler} className="sub-form">
                     <label>Select Your Ad Img</label>
                     <input type='file' name="file" onChange={updateField} required/>
 
                     <label>Enter Your URL</label>
                     <input name='url' onChange={updateField} required/>
-
-                    <label>From</label>
-                    <input type="date" name='startDate' onChange={updateField} required/>
-
-                    <label>To</label>
-                    <input type="date" name='endDate' onChange={updateField} required/>
 
                     <label>Caterogies</label>
                     <input name='categories' onChange={updateField} required/>
@@ -85,5 +73,4 @@ const AdForm = () => {
         </div>
     )
 }
-
-export default AdForm
+export default AddData;

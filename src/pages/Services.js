@@ -1,9 +1,11 @@
-function Services () {
-    return(
-     <div>This is Services
+import '../styles/home-page.css'
 
-     </div>   
+function Services (){
+    return (
+        <div className='home'>
+            This is services
+        </div>
     )
 }
 
-export default Services
+export default Services;

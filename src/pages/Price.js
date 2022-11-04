@@ -1,12 +1,13 @@
-// import PaypalCheckoutButton from "../components/PaypalCheckoutButton";
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import '../styles/price.css'
+
 
 function Price() {
   return (
     <PayPalScriptProvider
       options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}
     >
-      <div>
+      <div className="home">
         <div class="background1">
           <div class="container1">
             <div class="panel pricing-table">
@@ -22,7 +23,7 @@ function Price() {
                   Pay
                 </a> */}
                 <div className="paypal-button-container">
-                  <PayPalButtons />
+                  <PayPalButtons/>
                 </div>
               </div>
 
