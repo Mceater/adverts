@@ -1,18 +1,15 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Service from '../service/Service'
 import '../styles/ad-list.css';
 
-const AdList = ({data}) => {
+const AdList = ({data, updateAdHandler}) => {
 
     const [mode, setMode] = useState ('')
+    const [allAds, setData] = useState([])
 
     const edit = () => {
         setMode('edit')
         
-    }
-    
-    function extend(){
-        setMode('extend')
     }
 
     function save(){
@@ -28,6 +25,8 @@ const AdList = ({data}) => {
         Service.deleteData(data.id)
         .then(res => {
             console.log(res)
+            const updatedData = allAds.filter(product => product.id !== data.id)
+            updateAdHandler(updatedData)
         })
     }
 
@@ -35,6 +34,12 @@ const AdList = ({data}) => {
         const url = e.target.value
         console.log(url)
     }
+
+    useEffect(() => {
+        Service.getAll().then(
+            obj => setData(obj)
+        )
+    })
 
     if(mode === 'edit'){
         return(

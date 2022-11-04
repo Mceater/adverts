@@ -22,6 +22,10 @@ function App() {
     })
   }
 
+  function updateAdHandler (updatedData) {
+    setData(updatedData)
+  }
+
   console.log(isAuthenticated)
   useEffect(() => {
      getData()
@@ -33,7 +37,7 @@ function App() {
 
         <Routes>
           <Route path="/" element={<HomePage data={data} user={user} isAuthenticated={isAuthenticated}/>}/>
-          <Route path="/userpage" element={<UserPage user={user} data={data} isAuth={isAuthenticated}/>}/>
+          <Route path="/userpage" element={<UserPage user={user} data={data} isAuth={isAuthenticated} updateAdHandler={updateAdHandler}/>}/>
           <Route path="/about-us" element={<AboutUs/>}/>
           <Route path="/services" element={<Services/>}/>
           <Route path="/price" element={<Price/>}/>

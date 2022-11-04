@@ -1,4 +1,4 @@
-
+import Member from "../components/Member";
 
 function AboutUs (){
     return (

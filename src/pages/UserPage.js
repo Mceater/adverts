@@ -1,11 +1,10 @@
 import LoginBtn from '../components/LoginBtn';
 import Urlshortener from '../components/UrlShortener';
 import UserData from '../components/UserData';
-import AddData from '../components/AddData';
 import '../styles/user-page.css';
-import { useEffect } from 'react';
 
-function UserPage ({user, data, isAuth}){
+
+function UserPage ({user, data, isAuth, updateAdHandler}){
 
     let userData = [];
 
@@ -25,7 +24,7 @@ function UserPage ({user, data, isAuth}){
                     </div>
                     <LoginBtn userPage={true}/>
                     <Urlshortener/>
-                    <UserData data={userData} />
+                    <UserData data={userData} updateAdHandler={updateAdHandler}/>
                 </div>            
             )}
         </div>

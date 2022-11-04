@@ -54,5 +54,6 @@ li {
 }
 
 li a:hover {
-  color: yellow
+  color: rgb(255, 255, 118);
+  background: none;
 }
