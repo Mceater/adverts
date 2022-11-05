@@ -56,10 +56,64 @@
     #datacategory:hover {
       background: white; 
       color: black; 
-      border: 3px solid #008CBA;
+      border: 3px solid red;
+    }
+
+    #datacategoryPopular{
+      font-size: 11.5px;
+      color: black;
+      border-radius: 3px;
+      border:1px solid black;
+      font-family: 'Lato', sans-serif;
+      
+ 
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+     
+
+    }
+
+    #datacategoryPopular:hover{
+      background: white; 
+      color: black; 
+      border: 3px solid red;
+
     }
     
+    #cbutton{
+      position: fixed;
+      background-color: white;
+      top: 40px;
+      left: 190px;
+      border-radius: 20px;
+      padding: 3px;
+      padding-left: 10px;
+  }
 
+  #dbutton{
+    background-color: white;
+    border: 0;
+    border-radius: 20px;
+    font-size: 18px;
+    padding-left: 20px;
+    height: 40px;
+    width: 280px;
+    box-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
+    position: fixed;
+    top: 30px;
+    left: 50px;
+    padding: 6px;
+  }
+  #cbutton:hover{
+    opacity: 0.7;
+    background: red;
+  }
+  #dbutton:hover{
+    background: red;
+    opacity: 0.7;
+  }
+    
     .dataResult {
       display: grid;
       grid-template-columns: 50% 50%;
@@ -94,9 +148,6 @@
       border-radius: 10px;
      
     }
-    #order{
-      display: flex;
-    }
     
     .dataResult .dataItem {
       width: 100%;
@@ -105,7 +156,14 @@
       align-items: center;
       color: black;
     }
+
+
     
+
+    #order{
+      display: flex;
+    }
+
     .dataItem p {
       margin-left: 10px;
     }
