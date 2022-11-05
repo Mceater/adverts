@@ -9,20 +9,21 @@ The data source we have used in this application is mongodb.
 In regards to our milestone we have sufficiently achieved quite alot of what we initially set out to do as well as add more features to our product.
 This is what we needed to achieve
 User authentication with google, facebook and etc
-● Payment processing
-● A web page for users and editable user’s data collection according to the user
-signed in.
-● Main page with variety of images with links that is accessible to public.
-● Customer’s information and data protection
-● URL link shorten
-What we Have achieved has been this:
-● Payment processing
-● A web page for users and editable user’s data collection according to the user
-signed in.
-● Main page with variety of images with links that is accessible to public.
-● Customer’s information and data protection
-● URL link shorten
-● Categories for ads that allow for filtering
+
+- Payment processing
+- A web page for users and editable user’s data collection according to the user
+  signed in.
+- Main page with variety of images with links that is accessible to public.
+- Customer’s information and data protection
+- URL link shorten
+  What we Have achieved has been this:
+- Payment processing
+- A web page for users and editable user’s data collection according to the user
+  signed in.
+- Main page with variety of images with links that is accessible to public.
+- Customer’s information and data protection
+- URL link shorten
+- Categories for ads that allow for filtering
 
 //A guide to the project source code - where should we look for what you have done
 To look at our project source code you can easily view it from our github: https://github.com/MQCOMP3120/group-project-group-k
@@ -34,7 +35,7 @@ Some things that would be implemented if we had enough time would be customer te
 //A summary of the main roles and contributions of each team member and how you managed interaction and communication through the project
 Main roles of our project:
 Munkh:
-Shane: Filtering system
+Shane: Filtering system and documentation
 Farhan:
 Austin:
 
