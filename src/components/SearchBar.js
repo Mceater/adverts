@@ -45,7 +45,6 @@ function SearchBar({ data, setSearch }) {
        })
     })
 
-    console.log(uniqueCategories);
           
     if(searchWord === ""){
       setFilteredData("")
