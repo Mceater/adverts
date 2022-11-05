@@ -16,7 +16,9 @@ User authentication with google, facebook and etc
 - Main page with variety of images with links that is accessible to public.
 - Customer’s information and data protection
 - URL link shorten
-  What we Have achieved has been this:
+
+//What we Have achieved has been this:
+
 - Payment processing
 - A web page for users and editable user’s data collection according to the user
   signed in.
