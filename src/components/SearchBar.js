@@ -31,12 +31,27 @@ function SearchBar({ data, setSearch }) {
                 }
             })
         })
+
+    const uniqueCategories =[];
+
+    newFilter.map(element => {
+       return element.filter((element) =>{
+        const isDuplicate = uniqueCategories.includes(element);
+        if(!isDuplicate){
+          uniqueCategories.push(element);
+          return true
+        }
+        return false;
+       })
+    })
+
+    console.log(uniqueCategories);
           
     if(searchWord === ""){
       setFilteredData("")
     }
     else{
-      setFilteredData(newFilter)
+      setFilteredData(uniqueCategories)
     }
 
 }
@@ -61,10 +76,7 @@ function SearchBar({ data, setSearch }) {
             {filteredData.map((value, key)=>{
                return(
                 <div id="order" key={key}>
-                  {
-                    value.map((categories, keys) => {
-                      return <div key={keys}><button id="datacategory" style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={categories} onClick={changeInput}>{categories}</button></div>
-                  })}
+                  <button id="datacategory" style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={value} onClick={changeInput}>{value}</button>
                </div>
               );
             })}
