@@ -13,7 +13,7 @@ function PriceNoButton() {
                 <li class="pricing-features-item">Affordable</li>
                 <li class="pricing-features-item">3 months</li>
               </ul>
-              <span class="pricing-price">$0.01</span>
+              <span class="pricing-price">$5.00</span>
               {/* <a href="#/" class="pricing-button is-featured">
                   Pay
                 </a> */}
@@ -26,7 +26,7 @@ function PriceNoButton() {
                 <li class="pricing-features-item">Costly</li>
                 <li class="pricing-features-item">6 months</li>
               </ul>
-              <span class="pricing-price">$0.019</span>
+              <span class="pricing-price">$10.00</span>
               {/* <a href="#/" class="pricing-button is-featured">
                   Pay
                 </a> */}

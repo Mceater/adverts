@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./styles/main.css";
 import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 import Service from "./service/Service";
 import HomePage from "./pages/HomePage";
@@ -31,39 +32,43 @@ function App() {
     getData();
   }, []);
   return (
-    <div>
-      <Router>
-        <Footer isAuthenticated={isAuthenticated} />
+    <PayPalScriptProvider
+      options={{ "client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID }}
+    >
+      <div>
+        <Router>
+          <Footer isAuthenticated={isAuthenticated} />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <HomePage
-                data={data}
-                user={user}
-                isAuthenticated={isAuthenticated}
-              />
-            }
-          />
-          <Route
-            path="/userpage"
-            element={
-              <UserPage
-                user={user}
-                data={data}
-                isAuth={isAuthenticated}
-                updateAdHandler={updateAdHandler}
-              />
-            }
-          />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/price" element={<PriceNoButton />} />
-          <Route path="/pricePayPal" element={<Price />} />
-        </Routes>
-      </Router>
-    </div>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <HomePage
+                  data={data}
+                  user={user}
+                  isAuthenticated={isAuthenticated}
+                />
+              }
+            />
+            <Route
+              path="/userpage"
+              element={
+                <UserPage
+                  user={user}
+                  data={data}
+                  isAuth={isAuthenticated}
+                  updateAdHandler={updateAdHandler}
+                />
+              }
+            />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/price" element={<PriceNoButton />} />
+            <Route path="/pricePayPal" element={<Price />} />
+          </Routes>
+        </Router>
+      </div>
+    </PayPalScriptProvider>
   );
 }
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Link, useEffect, useState } from "react";
 import Service from "../service/Service";
 import "../styles/ad-list.css";
 
@@ -52,9 +52,9 @@ const AdList = ({ data, updateAdHandler }) => {
             placeholder={data.url}
             onChange={updateField}
           />
+
           <button type="submit">Save</button>
         </form>
-
         <button onClick={cancel}>Cancel</button>
         <button onClick={deleteAd}>Delete</button>
       </div>
