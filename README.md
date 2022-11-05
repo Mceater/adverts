@@ -1,3 +1,45 @@
+//Outline of the application
+The application we are aiming to build is suppose to be a ad service for any individual or group that wants to promote their brands to our website. When they create
+an account, to get a add to display they will pay a service through paypal to get their add on the screen. In addition, any person that creates an account to our website is
+offered a shortner url service.
+The target audience that we are trying to appeal to is companies that have their own websites and want a place free from ad blocks.
+The data source we have used in this application is mongodb.
+
+//Description of what we have been able to implement in this MVP
+In regards to our milestone we have sufficiently achieved quite alot of what we initially set out to do as well as add more features to our product.
+This is what we needed to achieve
+User authentication with google, facebook and etc
+● Payment processing
+● A web page for users and editable user’s data collection according to the user
+signed in.
+● Main page with variety of images with links that is accessible to public.
+● Customer’s information and data protection
+● URL link shorten
+What we Have achieved has been this:
+● Payment processing
+● A web page for users and editable user’s data collection according to the user
+signed in.
+● Main page with variety of images with links that is accessible to public.
+● Customer’s information and data protection
+● URL link shorten
+● Categories for ads that allow for filtering
+
+//A guide to the project source code - where should we look for what you have done
+To look at our project source code you can easily view it from our github: https://github.com/MQCOMP3120/group-project-group-k
+Looking at the folders src, server will show all files to see the documents.
+
+//A summary of what your next steps would be if you were to continue the project
+Some things that would be implemented if we had enough time would be customer testimonials as well as a image crop/styler to allow for users to change how their ad looks when uploading it to our database
+
+//A summary of the main roles and contributions of each team member and how you managed interaction and communication through the project
+Main roles of our project:
+Munkh:
+Shane: Filtering system
+Farhan:
+Austin:
+
+Howe we managed interaction and communication through our project occured through the use of discord, we would have meetings before our weekly milestones we had to present and clear up what we need to do according to this meetings
+
 //Weekly Reports
 Week 8-9 Meeting/weekly notes
 Subject: Group K
