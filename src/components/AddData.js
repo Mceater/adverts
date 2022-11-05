@@ -58,7 +58,7 @@ function AddData(){
                     <input name='url' onChange={updateField} required/>
 
                     <label>Caterogies</label>
-                    <input name='categories' onChange={updateField} required/>
+                    <input name='categories' onChange={updateField} maxLength = "10" required/>
 
                     <input type="submit" value="Save"/>
                 </form>

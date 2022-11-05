@@ -154,7 +154,7 @@ const handlePopular= () =>{
             {filteredData.map((value, key)=>{          
                return(
                 <div id="order" key={key}>
-                  <button id="datacategory" onClick={handleClick} style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={value.category}>{value.category},Popularity:{value.amount}</button>
+                  <button id="datacategoryPopular" onClick={handleClick} style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={value.category}>{value.category},Fame:{value.amount}</button>
                </div>
               );
             })}

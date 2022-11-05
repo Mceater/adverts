@@ -58,6 +58,28 @@
       color: black; 
       border: 3px solid red;
     }
+
+    #datacategoryPopular{
+      font-size: 11.5px;
+      color: black;
+      border-radius: 3px;
+      border:1px solid black;
+      font-family: 'Lato', sans-serif;
+      
+ 
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+     
+
+    }
+
+    #datacategoryPopular:hover{
+      background: white; 
+      color: black; 
+      border: 3px solid red;
+
+    }
     
     #cbutton{
       position: fixed;
@@ -126,9 +148,6 @@
       border-radius: 10px;
      
     }
-    #order{
-      display: flex;
-    }
     
     .dataResult .dataItem {
       width: 100%;
@@ -137,7 +156,14 @@
       align-items: center;
       color: black;
     }
+
+
     
+
+    #order{
+      display: flex;
+    }
+
     .dataItem p {
       margin-left: 10px;
     }
