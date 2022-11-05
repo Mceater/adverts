@@ -78,20 +78,20 @@ const handlePopular= () =>{
       }
   }
 
-  let tmp4 = [];
+  let addIfMore = [];
   sortToOne.map((o) => {
       console.log(o)
-      const existing = tmp4.find(e => e.category === o.category);
+      const existing = addIfMore.find(e => e.category === o.category);
   if (existing) {
       existing.amount += 1;
       return true;
   } else {
-      tmp4.push({category: o.category, amount: o.amount});
+      addIfMore.push({category: o.category, amount: o.amount});
       return false;
   }
   });
 
-  const final = tmp4.filter((element)=>{
+  const getRidOf0 = addIfMore.filter((element)=>{
       console.log(element.amount)
       if(element.amount === 0)
       {
@@ -101,9 +101,11 @@ const handlePopular= () =>{
           return element
       }
   })
+
+  const finalDescending = [...getRidOf0].sort((a, b) => b.amount - a.amount);
   setSeeSearch(false)
   setSearch("")
-  setFilteredData(final)
+  setFilteredData(finalDescending)
 
 }
 
