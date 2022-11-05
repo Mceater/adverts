@@ -65,7 +65,7 @@ function AddData() {
           <label>Enter Your URL</label>
           <input name="url" onChange={updateField} required />
 
-          <label>Caterogies</label>
+          <label>Categories</label>
           <input
             name="categories"
             onChange={updateField}

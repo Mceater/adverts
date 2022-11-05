@@ -36,10 +36,10 @@ Some things that would be implemented if we had enough time would be customer te
 
 //A summary of the main roles and contributions of each team member and how you managed interaction and communication through the project
 Main roles of our project:
-Munkh:
+Munkh: Main role in Group K is UI. Tried my best to make sure our web application looks good.
 Shane: Filtering system and documentation
 Farhan:
-Austin:
+Austin: Anything that I can do such as bug fix, merging branches, PayPal implementation, URL Shortner.
 
 Howe we managed interaction and communication through our project occured through the use of discord, we would have meetings before our weekly milestones we had to present and clear up what we need to do according to this meetings
 
