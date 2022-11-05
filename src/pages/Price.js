@@ -1,6 +1,5 @@
 import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import '../styles/price.css'
-
+import "../styles/price.css";
 
 function Price() {
   return (
@@ -23,7 +22,7 @@ function Price() {
                   Pay
                 </a> */}
                 <div className="paypal-button-container">
-                  <PayPalButtons/>
+                  <PayPalButtons />
                 </div>
               </div>
 
