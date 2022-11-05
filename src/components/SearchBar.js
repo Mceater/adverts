@@ -1,43 +1,46 @@
 import React, { useState } from "react";
 import "../styles/SearchBar.css"
 
-function SearchBar({ placeholder, data, setSearch }) {
+function SearchBar({ data, setSearch }) {
   
   
 
   
   const [filteredData, setFilteredData] = useState([]);
-  const [changeFilter, setChangeFilter ] = useState([]);
   const [searchWord, setSearchWord] = useState("");
-
-
-
   
+
+  var colors = ['#FFEFD5', '#FFF1D0', '#FFF0B7'];
 
   const handleFilter = async (event) => {
     
-    setChangeFilter([])
+
+   
     setSearchWord( event.target.value)
     const searchWord = event.target.value;
     setSearch(searchWord)
-    for(let i = 0; i<data.length; i++){
-    const newFilter = data[i].categories.filter((value)=>{
-               
-                return value.toLowerCase().includes(searchWord.toLowerCase())
+    
+    const newFilter = data.map((element) =>{
+      return element.categories.filter((element) =>{
+              if(element.toLowerCase().includes(searchWord.toLowerCase()) === true)
+                {
+                    return element
+                }
+                else{
+                  return undefined
+                }
             })
-    setChangeFilter(oldArray=>[...oldArray, newFilter]);
-   
-};
-
- 
+        })
+          
     if(searchWord === ""){
       setFilteredData("")
     }
     else{
-      setFilteredData(changeFilter)
+      setFilteredData(newFilter)
     }
 
 }
+
 
  const changeInput = (event) =>{
  
@@ -51,17 +54,16 @@ function SearchBar({ placeholder, data, setSearch }) {
 
     <div className="search">
         <div className="searchInputs">
-            <input type="text" value={searchWord} onChange={handleFilter}/>
-           
+              <input type="text" placeholder="Search For Categories" value={searchWord} onChange={handleFilter}/>    
         </div>
         {filteredData.length !== 0 && (
         <div className="dataResult">
             {filteredData.map((value, key)=>{
-              return(
+               return(
                 <div id="order" key={key}>
                   {
                     value.map((categories, keys) => {
-                      return <div key={keys}><button id="datacategory" value={categories} onClick={changeInput}>{categories}</button></div>
+                      return <div key={keys}><button id="datacategory" style={{background: colors[Math.floor(Math.random() * colors.length)]}} value={categories} onClick={changeInput}>{categories}</button></div>
                   })}
                </div>
               );

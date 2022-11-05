@@ -30,35 +30,66 @@
       font-size: 35px;
     }
     
+    
+
     #datacategory{
-     background-color: yellow;
+     
+      color: black;
+      border-radius: 5px;
+      border:1px solid black;
+      font-family: 'Lato', sans-serif;
+      
+ 
+      cursor: pointer;
+      position: relative;
+      display: inline-block;
+      box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+      7px 7px 20px 0px rgba(0,0,0,.1),
+      4px 4px 5px 0px rgba(0,0,0,.1);
+
+
+      
+
     }
 
+
+    #datacategory:hover {
+      background: white; 
+      color: black; 
+      border: 3px solid #008CBA;
+    }
+    
+
     .dataResult {
+      height: fit-content;
       margin-top: 5px;
       margin-left: 50px;
-      width: 250px;
       height: 200px;
+      width: 250px;
+
+   
       border-radius: 10px;
       padding: 15px;
       background-color: white;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       overflow: hidden;
-      overflow-y: none;
+      overflow-x: none;
+      overflow-y: none; 
+       
     }
+
 
     .dataResult button {
       border: none;
       background: none;
-      font-size: 15px;
+      font-size: 12px;
     }
   
     .dataResult::-webkit-scrollbar {
-      display: block;
-      width: 9px;
-      height: 9px;
-      height: 0;
-      background-color: transparent;
+      width: 20px;
+      background: red;
+      border-radius: 10px;
+     
     }
     #order{
       display: flex;
