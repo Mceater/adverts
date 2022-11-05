@@ -12,11 +12,10 @@ const PaypalCheckoutButton = (props) => {
   const handleApprove = (oderID) => {
     setPaidFor(true);
     navigate("/userpage");
-    // <Link to="/userpage"></Link>;
   };
 
   if (paidFor) {
-    // alert("Thank you for payment!")
+    alert("Thank you for payment!");
   }
 
   if (error) {

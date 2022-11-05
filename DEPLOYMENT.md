@@ -1,5 +1,10 @@
 //A link to a deployed version of your application if available
 
+//Sandbox PayPal IDs
+
+Personal(for_payer): userforgroupk@personal.example.com / tomhardg
+Business(for_receiver): sb-fx63221983984@business.example.com / groupkbiz
+
 // Information on how to run and build the project, eg. if someone were to take over development
 Simple Installation for the project
 packages to install
