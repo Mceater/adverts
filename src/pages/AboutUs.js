@@ -10,14 +10,14 @@ function AboutUs() {
     "Bit of this bit of that, Main role in Group K is to create filter systems and provide documentation";
 
   const aboutFarhan =
-    "More of a Curious George and mad doctor of the team, helped with implementation of the API used i.e Auth0 , Paypal also added a few design components from Navbar (not anymore present , only in code) to dropdown component to adding style components.";
+    "More of a Curious George and mad doctor of the team, helped with implementation of the API used i.e Auth0 , Paypal also added a few design components from Navbar (not anymore present , only in code) to adding style components.";
 
   return (
     <div className="home">
       <div className="about-us-wrapper">
         <Member
           name="Farhan Ur Rashid Risan"
-          SID="46119108"
+          SID="45567298"
           image="munkh.jpg"
           about={aboutFarhan}
         />
