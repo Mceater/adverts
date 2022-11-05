@@ -19,6 +19,8 @@ const AdList = ({data, updateAdHandler}) => {
         console.log(data)
     }
 
+    
+
     function cancel(){
         setMode('')
     }
